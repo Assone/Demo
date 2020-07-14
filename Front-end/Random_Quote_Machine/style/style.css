@@ -16,6 +16,8 @@ body {
   padding: 40px 50px;
   border-radius: 5px;
   background-color: #fff;
+  
+  font-family: Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 #quote-box #content {
   overflow: auto;
