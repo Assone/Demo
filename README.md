@@ -20,8 +20,6 @@
 
 [类似苹果风格的轮播](./Front-end/Apple-like_Gallery_Slideshow)
 
-<<<<<<< HEAD
 [简易画板](./Front-end/Drawing_board)
-=======
+
 [Todo List](https://asonny-demo-todolist.netlify.app)
->>>>>>> a926a66c5d038602756c9f35f85d810ea381a33f
