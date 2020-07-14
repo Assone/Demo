@@ -1,0 +1,410 @@
+/* fixme: chat-message窗口的图片hover显示提示放大 */
+
+main {
+  position: relative;
+  overflow: auto;
+}
+
+#chat {
+  height: 100%;
+  margin-top: 80px;
+}
+
+
+
+#chat-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+
+  height: 80px;
+  width: calc(100% - 350px);
+  padding-right: 30px;
+  padding-left: 30px;
+
+  background-color: #fff;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+/* 设置chat-bar的标题文本 */
+#chat-bar #chat-title {
+  font: 24px var(--regular);
+}
+
+/* 设置chat-bar头像 */
+#chat-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 240px;
+}
+
+/* 设置chat-bar的用户信息的拉伸因子 */
+#chat-profile .chat-info {
+  flex-grow: 1;
+}
+
+/* 设为状态icon的定位上下文 */
+#chat-bar .user-avater {
+  position: relative;
+
+  margin-right: 16px;
+}
+
+/* 设置头像的宽高 */
+#chat-bar .user-avater,
+#chat-bar .user-avater img {
+  width: 50px;
+  height: 50px;
+}
+
+/* 设置用户状态icon */
+#chat-bar .user-avater .m-state-online__user {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+}
+
+/* 设置当前用户名的文本样式 */
+#chat-bar .chat-info .user-info {
+  color: #2399f1;
+}
+
+/* 设置用户身份的文本样式 */
+#chat-bar .chat-info .user-source {
+  font-size: 14px;
+  color: #b5b5b5;
+}
+
+
+/* setting chat-chats area */
+
+/* 信息列表定宽 */
+#chat-chats {
+  float: left;
+
+  width: 400px;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 控制搜索框样式 */
+#chat-search {
+  position: relative;
+
+  height: 70px;
+  padding-top: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  text-align: center;
+}
+
+/* 设置搜索框input样式 */
+#chat-search__input {
+  width: 340px;
+  height: 36px;
+  padding-left: 15px;
+  border: 1px solid #e5e8ee;
+  border-radius: 4px;
+}
+
+/* 更改占位符颜色 */
+#chat-search__input::placeholder {
+  font-size: 14px;
+  color: rgba(159, 169, 186, .8);
+}
+
+/* 设置搜索框小图标位置 */
+#chat-search img {
+  position: absolute;
+  top: 25px;
+  right: 44px;
+
+  width: 16px;
+  height: 16px;
+
+  background: -26px -71px url(../images/sprite.png);
+}
+
+/* 聊天列表取消默认序号 */
+#chat-list {
+  overflow-y: scroll;
+  height: 100%;
+
+  list-style-type: none;
+}
+
+/* 设置的聊天列表的底边框 */
+#chat-list li {
+  position: relative;
+
+  height: 130px;
+  padding: 15px 24px 23px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 设置聊天列表用户信息 */
+#chat-list .info-user {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 14px;
+
+  font-size: 14px;
+}
+
+/* 设置聊天列表用户头像 */
+#chat-list .info-user__image {
+  margin-right: 20px;
+}
+
+/* 设置聊天列表用户信息的拉伸因子 */
+#chat-list .user-info {
+  flex-grow: 1;
+}
+
+/* 设置聊天列表用户信息的名字的文本样式 */
+#chat-list .user-info .user-info__name {
+  font-size: 16px;
+  line-height: 18px;
+  color: #585d68;
+
+  vertical-align: middle;
+}
+
+/* 设置聊天列表用户信息的身份的文本样式 */
+#chat-list .user-info .user-info__source {
+  color: #b5b5b5;
+}
+
+/* 设置聊天列表的信息到达时间的文本样式 */
+#chat-list .chat-list__lasttime {
+  color: #7f8fa4;
+}
+
+/* 设置聊天列表的信息预览的文本样式 */
+#chat-list .info-message__content {
+  font: 14px var(--regular);
+  color: #585d68;
+}
+
+
+
+/* setting chat message area style */
+
+#chat-message {
+  float: left;
+
+  width: calc(100% - 400px);
+  height: 100%;
+}
+
+/* 设置message-bar的布局 */
+#chat-message #message-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 70px;
+  padding-right: 20px;
+  padding-left: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 设置message-controls的布局 */
+#chat-message #message-controls {
+  display: flex;
+}
+
+/* 设置按键的布局和背景样式 */
+#message-controls ul {
+  display: flex;
+
+  border-radius: 4px;
+  border: solid 1px #ced0da;
+
+  background-image: linear-gradient(0deg,
+      #f1f3f7 0%,
+      #ffffff 100%),
+    linear-gradient(#ffffff,
+      #ffffff);
+  background-blend-mode: normal,
+    normal;
+
+  list-style-type: none;
+}
+
+/* 设置message-controls列表的右边框样式 */
+#message-controls li {
+  width: 36px;
+  height: 32px;
+  border-right: 1px solid #ced0da;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+/* 取消message-controls列表的最后一个边框的样式 */
+#message-controls li:last-child {
+  border-right: 0;
+}
+
+/* 统一设置message-controls里图片的背景图片 */
+#message-controls li img {
+  width: 16px;
+  height: 16px;
+  margin-top: 8px;
+
+  background-image: url(../images/sprite.png);
+  background-position: -47px -71px;
+}
+
+/* 设置每个按钮的背景图片偏移量 */
+
+#message-controls__share {
+  background-position-x: -68px !important;
+}
+
+#message-controls__del {
+  background-position-x: -89px !important;
+}
+
+#message-controls__previous {
+  background-position-x: -105px !important;
+}
+
+#message-controls__next {
+  background-position-x: -116px !important;
+}
+
+/* 设置分隔线样式 */
+#message-controls .divider {
+  width: 1px;
+  height: 30px;
+  margin-right: 21px;
+  margin-left: 23px;
+
+  background-color: #ced0da;
+  opacity: 0.3;
+}
+
+/* 设置总数样式 */
+#message-controls .message-total {
+  margin-right: 15px;
+
+  font-size: 14px;
+  color: #56688a;
+  line-height: 34px;
+}
+
+
+#message-list {
+  overflow: auto;
+  height: 100%;
+}
+
+
+
+.message-detail {
+  margin: 25px 60px 25px 30px;
+}
+
+/* 使聊天窗口头像固定在左边 */
+.message-detail img {
+  float: left;
+
+  margin-right: 20px;
+}
+
+.message-detail .message-detail__container {
+  overflow: hidden;
+}
+
+.message-detail__container .user-info {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.message-detail__container .user-info__name {
+  margin-right: 8px;
+
+  color: #585d68;
+}
+
+.message-detail__container .user-info__time {
+  font-size: 14px;
+  color: #7f8fa4;
+}
+
+.message-detail__content {
+  font: 14px var(--regular);
+  color: #585d68;
+}
+
+.message-detail__photo {
+  overflow: auto;
+
+  margin-top: 20px;
+}
+
+.message-detail__photo img {
+  width: 156px;
+  height: 100px;
+  border-radius: 4px;
+}
+
+
+
+#message-input {
+  display: flex;
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  left: 780px;
+
+  height: 54px;
+  border: 1px solid #cceedd;
+  border-radius: 4px;
+}
+
+#message-input__add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 54px;
+  height: 54px;
+  border: solid 1px #ced0da;
+  border-right: 0;
+  border-radius: 4px 0px 0px 4px;
+
+  background-image: linear-gradient(0deg,
+      #f1f3f7 0%,
+      #ffffff 100%),
+    linear-gradient(#ffffff,
+      #ffffff);
+  cursor: pointer;
+}
+
+#message-input__add img {
+  width: 14px;
+  height: 14px;
+
+  background-image: url(../images/sprite.png);
+  background-position: -132px -73px;
+}
+
+#message-input input {
+  width: calc(100% - 54px);
+  height: 54px;
+  padding-left: 20px;
+
+  font-family: var(--regular);
+  color: #585d68;
+}

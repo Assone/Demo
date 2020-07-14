@@ -1,0 +1,301 @@
+/* 引入字体文件 */
+
+@font-face {
+  font-family: Montserrat-Light;
+  src: url(../fonts/Montserrat-Light.otf);
+}
+
+@font-face {
+  font-family: Montserrat-ExtraLight;
+  src: url(../fonts/Montserrat-ExtraLight.ttf);
+}
+
+/* 设置通用样式字体和颜色 */
+.title,
+.content {
+  font-family: Montserrat-ExtraLight;
+
+  color: #141414;
+}
+
+/* setting header descriptipn style */
+
+/* descriptipn区域文字居中 */
+header .descriptipn {
+  text-align: center;
+}
+
+/* 设置description标题和内容文本样式 */
+
+header .descriptipn .title {
+  font-size: 62px;
+  color: #fff;
+}
+
+header .descriptipn .content {
+  font-size: 20px;
+  line-height: 32px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* setting header form text style */
+
+#create-account {
+  font-family: Montserrat-Light;
+  color: #fff;
+}
+
+#form-content #form-title {
+  font-size: 16px;
+}
+
+#form-content #form-descriptipn {
+  opacity: 0.3;
+  font-size: 12px;
+}
+
+#component-registered button {
+  font: 12px Montserrat-Light;
+}
+
+
+
+/*setting feature area style*/
+/*--------------------------*/
+
+#feature .descriptipn {
+  text-align: center;
+  color: #141414;
+}
+
+#feature .descriptipn .content {
+  font: 14px Montserrat-Light;
+  letter-spacing: 2px;
+}
+
+#feature .descriptipn .title {
+  font: 38px Montserrat-ExtraLight;
+}
+
+/* 取消列表默认序号 */
+#feature li {
+  color: #141414;
+  list-style-type: none;
+}
+
+#feature li h3 {
+  font: 20px Montserrat-Light;
+}
+
+#feature li p {
+  font: 16px Montserrat-ExtraLight;
+  opacity: .7;
+}
+
+
+
+/* setting supportive area style */
+/* ----------------------------- */
+
+#support .descriptipn .title,
+#support .descriptipn .content {
+  font-family: Montserrat-ExtraLight;
+}
+
+#support .descriptipn .title {
+  font-size: 38px;
+  color: #FFF;
+}
+
+#support .descriptipn .content {
+  font-size: 18px;
+  color: rgba(255, 255, 255, .7);
+}
+
+/* 设置文字间距2px */
+#support .buttons button {
+  font-family: Montserrat-Light;
+  letter-spacing: 2px;
+}
+
+/* 设置button颜色 */
+#support .buttons button:nth-child(1) {
+  color: #141414;
+}
+
+#support .buttons button:nth-child(2) {
+  color: rgba(255, 255, 255, .3);
+}
+
+
+
+/* setting product area text */
+
+#product {
+  text-align: center;
+
+  color: #141414;
+}
+
+#product .title {
+  font-size: 42px;
+}
+
+/* 取消列表默认序号 */
+#product ul {
+  list-style-type: none;
+
+  font-size: 16px;
+  opacity: .7;
+}
+
+
+/* setting photo area text */
+
+#photo {
+  color: #141414;
+}
+
+#photo .title {
+  font: 20px Montserrat-Light;
+}
+
+#photo .content {
+  font: 16px Montserrat-ExtraLight;
+  opacity: .7;
+}
+
+
+/* setting team area text */
+/* ---------------------- */
+
+#team .container > .descriptipn {
+  font-family: Montserrat-ExtraLight;
+  text-align: center;
+
+  color: #141414;
+}
+
+#team .descriptipn .title {
+  font-size: 42px;
+}
+
+#team .descriptipn .content {
+  font-size: 18px;
+  opacity: .7;
+}
+
+#team #userpic-list {
+  font-size: 0;
+}
+
+#team .user-info {
+  font-family: Montserrat-Light;
+  color: #FFF;
+
+  text-align: center;
+}
+
+#team .user-info .user-name {
+  font-size: 20px;
+}
+
+/* 设置文字间距为1px */
+#team .user-info .office {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: .4;
+}
+
+
+
+
+/* setting contact area text */
+/* ------------------------- */
+
+/* feedback form text */
+#feedback {
+  font-family: Montserrat-Light;
+}
+
+#feedback p {
+  letter-spacing: 2px;
+  color: #141414;
+}
+
+#feedback input::placeholder,
+#feedback textarea::placeholder {
+  font-size: 14px;
+  color: #141414;
+  opacity: .5;
+}
+
+#feedback button {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #FFF;
+}
+
+
+/* setting conacts text style */
+
+#contact .descriptipn {
+  font-family: Montserrat-ExtraLight;
+  color: #141414;
+}
+
+#contact .descriptipn .title {
+  font-size: 42px;
+}
+
+#contact .descriptipn .content {
+  opacity: .7;
+}
+
+#contact .descriptipn ul {
+  list-style-type: none;
+}
+
+#contact .descriptipn a {
+  font: 16px Montserrat-Light;
+  text-decoration: none;
+  color: #141414;
+}
+
+
+/* setting footer area text */
+/* ------------------------ */
+
+#menus ul,
+#socials ul {
+  list-style-type: none;
+}
+
+.link-title,
+#socials .title {
+  font: 14px Montserrat-Light;
+  letter-spacing: 2px;
+  line-height: 28px;
+  color: #fff;
+}
+
+#menus a,
+#socials p {
+  font-family: Montserrat-ExtraLight;
+  color: #fff;
+}
+
+#menus a {
+  font-size: 16px;
+  text-decoration-line: none;
+  line-height: 46px;
+
+  opacity: 0.3;
+}
+
+#socials p {
+  font-size: 18px;
+
+  opacity: 0.4;
+}

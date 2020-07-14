@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./stylesheets/reset.css">
+  <link rel="stylesheet" href="./stylesheets/menu.css">
+  <link rel="stylesheet" href="./stylesheets/chat.css">
+  <link rel="stylesheet" href="./stylesheets/module.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <aside>
+    <div id="primary">
+      <div id="switch-pages">
+        <div class="m-btn__plane m-state__active-highlight-point">
+          <img src="./images/transparent.gif" alt="logo">
+        </div>
+        <div class="m-btn__rocker"><img src="./images/transparent.gif" alt="logo"></div>
+        <div class="m-btn__game"><img src="./images/transparent.gif" alt="logo"></div>
+        <div class="m-btn__add"><img src="./images/transparent.gif" alt="logo"></div>
+      </div>
+      <div id="btn-actions">
+        <div class="m-btn__grid"></div>
+        <div class="m-btn__setting"></div>
+      </div>
+    </div>
+    <div id="secondary">
+      <div class="menu">
+        <div class="menu-header">
+          <p class="menu-title">MENU</p>
+          <div class="m-btn__setting"></div>
+        </div>
+        <ul class="menu-list">
+          <li><a href="#">Overview</a><span></span></li>
+          <li><a href="#">Sales</a><span class="m-subscript__notification">54</span></li>
+          <li><a href="#">Your Staff</a><span></span></li>
+          <li><a href="#">Analytics & Targeting</a><span></span></li>
+          <li><a href="#">What's New</a><span></span></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <div class="menu-header">
+          <p class="menu-title">YOUR PRODUCTS</p>
+          <div class="m-btn__setting"></div>
+        </div>
+        <ul class="menu-list">
+          <li><img src="./images/transparent.gif" alt="icon"><a href="#">Books</a><span></span></li>
+          <li><img src="./images/transparent.gif" alt="icon"><a href="#">Tutorials</a><span></span></li>
+          <li><img src="./images/transparent.gif" alt="icon"><a href="#">Stocks</a><span></span></li>
+          <li><img src="./images/transparent.gif" alt="icon"><a href="#">Infographics</a><span></span></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <div class="menu-header">
+          <p class="menu-title">DASHBOARD</p>
+          <div class="m-btn__setting"></div>
+        </div>
+        <ul class="menu-list">
+          <li><a href="#" class="m-state__active-highlight-point m-state-active__text">Messages</a><span class="m-subscript__notification">21</span></li>
+          <li><a href="#">Connections</a><span></span></li>
+          <li><a href="#">Integrations</a><span class="m-subscript__alert">!</span></li>
+          <li><a href="#">Account Settings</a><span></span></li>
+          <li><a href="#">App Settings</a><span></span></li>
+        </ul>
+      </div>
+
+      <div id="server-capacity">
+        <div id="server-capacity__description">
+          <div id="server-capacity__title">Monthly Goals</div>
+          <div id="server-capacity__content">$580/$3200</div>
+        </div>
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div id="chat-bar">
+      <p id="chat-title">Message</p>
+      <div id="chat-profile">
+        <div class="user-avater">
+          <img src="./images/Face.png" alt="user-avater">
+          <span class="m-state-online__user">
+            <span class="m-state-online__user-bar"></span>
+          </span>
+        </div>
+        <div class="chat-info">
+          <p class="user-info">Jordan J.</p>
+          <p class="user-source">Administrator</p>
+        </div>
+        <div class="m-btn__more"></div>
+      </div>
+    </div>
+    <div id="chat">
+      <div id="chat-chats">
+        <div id="chat-search">
+          <input type="search" id="chat-search__input" placeholder="Search">
+          <img src="./images/transparent.gif" alt="icon-search">
+        </div>
+        <ul id="chat-list">
+          <li>
+            <span class="m-state__active-highlight-line"></span>
+            <div class="info-user">
+              <img src="./images/Face-1.png" alt="user-avater" class="info-user__image">
+              <div class="user-info">
+                <p class="user-info__name m-state-active__text m-state-active__icon"><span class="state-unread"></span>Bessie Berry</p>
+                <p class="user-info__source">Twitter</p>
+              </div>
+              <span class="chat-list__lasttime">3m</span>
+            </div>
+            <div class="info-message">
+              <span class="m-subscript__notification">4</span>
+              <p class="info-message__content">I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact,
+                it's relatively quick, and stable...</p>
+            </div>
+          </li>
+          <li>
+            <div class="info-user">
+              <img src="./images/Face-2.png" alt="user-avater" class="info-user__image">
+              <div class="user-info">
+                <p class="user-info__name">Victor Weber</p>
+                <p class="user-info__source">Adobe</p>
+              </div>
+              <span class="chat-list__lasttime">8m</span>
+            </div>
+            <div class="info-message">
+              <p class="info-message__content">I shared this on my fb wall a few months back, and I thought I'd share
+                it here again because it's such a great...</p>
+            </div>
+          </li>
+          <li>
+            <div class="info-user">
+              <img src="./images/Face-3.png" alt="user-avater" class="info-user__image">
+              <div class="user-info">
+                <p class="user-info__name">Dustin Benson</p>
+                <p class="user-info__source">Facebook</p>
+              </div>
+              <span class="chat-list__lasttime">Yesterday</span>
+            </div>
+            <div class="info-message">
+              <p class="info-message__content">If there is anyone who needs an invitation please add yourself in the
+                comments of this post!</p>
+            </div>
+          </li>
+          <li>
+            <div class="info-user">
+              <img src="./images/Face-4.png" alt="user-avater" class="info-user__image">
+              <div class="user-info">
+                <p class="user-info__name">Jack Mason</p>
+                <p class="user-info__source">Yahoo</p>
+              </div>
+              <span class="chat-list__lasttime">Yesterday</span>
+            </div>
+            <div class="info-message">
+              <p class="info-message__content">BruteDC is a peer-to-peer movie+tv series sharing and downloading
+                platform which works on intranet inside...</p>
+            </div>
+          </li>
+          <li>
+            <div class="info-user">
+              <img src="./images/Face-5.png" alt="user-avater" class="info-user__image">
+              <div class="user-info">
+                <p class="user-info__name">Stephen Shelton</p>
+                <p class="user-info__source">Snapchat</p>
+              </div>
+              <span class="chat-list__lasttime">13 Jun</span>
+            </div>
+            <div class="info-message">
+              <p class="info-message__content">Yes, p2p traffic is often filtered (QoSed). Although i do use BT on O2
+                wires, and in good days dl speed...</p>
+            </div>
+          </li>
+          <li>
+            <div class="info-user">
+              <img src="./images/Face-6.png" alt="user-avater" class="info-user__image">
+              <div class="user-info">
+                <p class="user-info__name">Sally Willis</p>
+                <p class="user-info__source">Twitter</p>
+              </div>
+              <span class="chat-list__lasttime">12 Jun</span>
+            </div>
+            <div class="info-message">
+              <p class="info-message__content">Yes, it's O2: 'internet extreme', which is no longer offered.</p>
+            </div>
+          </li>
+          <li>
+            <div class="chat-list__info">
+              <div class="info-user">
+                <img src="./images/Face-7.png" alt="user-avater" class="info-user__image">
+                <div class="user-info">
+                  <p class="user-info__name">Robert Patton</p>
+                  <p class="user-info__source">A Team</p>
+                </div>
+                <span class="chat-list__lasttime">9 Jun</span>
+              </div>
+              <div class="info-message">
+                <p class="info-message__content">I change my service from this 4Mb plan to their much cheaper 8Mb plan,
+                  my speed will dramatically decrease.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="chat-message">
+        <div id="message-bar">
+          <p id="message-object" class="m-state-online__icon">Bessie Berry</p>
+          <div id="message-controls">
+            <ul id="btn-message__dialogue">
+              <li><img src="./images/transparent.gif"  id="message-controls__add-person" alt="button"></li>
+              <li><img src="./images/transparent.gif" id="message-controls__share" alt="button"></li>
+              <li><img src="./images/transparent.gif" id="message-controls__del" alt="button"></li>
+            </ul>
+            <span class="divider"></span>
+            <span class="message-total">1 of 28</span>
+            <ul id="btn-message__view">
+              <li><img src="./images/transparent.gif" id="message-controls__previous" alt="button"></li>
+              <li><img src="./images/transparent.gif" id="message-controls__next" alt="button"></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="message-list">
+          <div class="message-detail">
+            <img src="./images/Face-1.png" alt="user-avater" class="user-avater">
+            <div class="message-detail__container">
+              <div class="user-info">
+                <p class="user-info__name">Bessie Berry</p>
+                <p class="user-info__time">8:31 AM</p>
+              </div>
+              <p class="message-detail__content">Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+            </div>
+          </div>
+          <div class="message-detail">
+            <img src="./images/Face.png" alt="user-avater" class="user-avater">
+            <div class="message-detail__container">
+              <div class="user-info">
+                <p class="user-info__name">Jordan Jackson</p>
+                <p class="user-info__time">8:31 AM</p>
+              </div>
+              <p class="message-detail__content">I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.</p>
+            </div>
+          </div>
+          <div class="m-timeline m-timeline__color-old">
+            <span class="m-timeline__line"></span>
+            <span class="m-timeline__content">Tuesday</span>
+            <span class="m-timeline__line"></span>
+          </div>
+          <div class="message-detail">
+            <img src="./images/Face-1.png" alt="user-avater" class="user-avater">
+            <div class="message-detail__container">
+              <div class="user-info">
+                <p class="user-info__name">Bessie Berry</p>
+                <p class="user-info__time">8:31 AM</p>
+              </div>
+              <p class="message-detail__content">Funny comparison. so would the proper antivirus not slow down the internet as much or do you mean a freebie doenst protect the computer from viruses?</p>
+            </div>
+          </div>
+          <div class="message-detail">
+            <img src="./images/Face.png" alt="user-avater" class="user-avater">
+            <div class="message-detail__container">
+              <div class="user-info">
+                <p class="user-info__name">Jordan Jackson</p>
+                <p class="user-info__time">8:31 AM</p>
+              </div>
+              <p class="message-detail__content">I pay for the 4Mb/sec down, 512 Kb/sec up service from O2, and haven't had any problems. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it. I max out at about 3 Mb/sec down, and 350 Kb/sec up. Probably because of a noisy telephone line, not because I'm being throttled. When my uploads go over 25 KB/sec (note, bytes, not bits), my download speed suffers. This is expected, as downloads require upload bandwidth as well. </p>
+              <div class="message-detail__photo">
+                <img src="./images/photo_1.png" alt="photo">
+                <img src="./images/photo_2.png" alt="photo">
+              </div>
+            </div>
+          </div>
+          <div class="m-timeline m-timeline__color-new">
+            <span class="m-timeline__line"></span>
+            <span class="m-timeline__content">New Messages</span>
+            <span class="m-timeline__line"></span>
+          </div>
+          <div class="message-detail">
+            <img src="./images/Face-1.png" alt="user-avater" class="user-avater">
+            <div class="message-detail__container">
+              <div class="user-info">
+                <p class="user-info__name">Bessie Berry</p>
+                <p class="user-info__time">8:31 AM</p>
+              </div>
+              <p class="message-detail__content">I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it. </p>
+            </div>
+          </div>
+
+          <div id="message-input">
+            <div id="message-input__add"><img src="./images/transparent.gif" alt="button"></div>
+            <input type="text" value="Well, kinda both :) but more of that second option, i`ve seen many systems infected and crawling with">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

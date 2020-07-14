@@ -1,0 +1,15 @@
+header {
+  background: url(./images/background-header.jpg);
+}
+
+#support {
+  background-image: url(./images/background-supportive.jpg);
+}
+
+#feature img,
+#product img,
+#team #userpic-list img,
+#contact img,
+footer img {
+  background-image: url(./images/sprites.png);
+}

@@ -1,0 +1,10 @@
+aside {
+  float: left;
+}
+
+main {
+  float: left;
+  
+  width: calc(100% - 350px);
+  height: 100%;
+}

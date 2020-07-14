@@ -1,0 +1,175 @@
+/* 设置side区域大小 */
+aside {
+  display: flex;
+
+  width: 350px;
+  height: 100%;
+}
+
+/* sidebar整体位置设置 */
+#primary {
+  width: 100px;
+  height: 100%;
+  padding: 20px;
+
+  background-color: #1d2531;
+}
+
+#secondary {
+  overflow: auto;
+
+  width: 250px;
+  height: 100%;
+  padding: 30px;
+
+  background-color: #222c3c;
+}
+
+
+
+
+
+/* primary area style */
+/* 设置视图按钮外边距 */
+#primary #switch-pages div {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#primary #switch-pages .m-state__active-highlight-point::before {
+  left: -20px;
+}
+
+/* 设置边栏底部图标固定定位 */
+#primary #btn-actions {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 20px;
+  left: 26px;
+
+  width: 48px;
+}
+
+
+
+/* secondary area style */
+/* 设置菜单底边边框 */
+#secondary .menu {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #2a3547;
+  margin-bottom: 25px;
+}
+
+/* 取消最后一个菜单列表的底边框 */
+#secondary .menu:nth-child(3) {
+  border-bottom: none;
+}
+
+/* 设置菜单标题布局 */
+#secondary .menu-header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+/* 设置菜单标题文本样式 */
+#secondary .menu-header .menu-title {
+  font-size: 12px;
+  color: #5b6779;
+}
+
+/* 取消列表默认序号 */
+#secondary .menu-list {
+  font-size: 14px;
+  list-style-type: none;
+}
+
+/* 设置菜单列表行高 */
+#secondary .menu-list li {
+  position: relative;
+
+  line-height: 36px;
+}
+
+/* 设置菜单链接颜色 */
+#secondary .menu-list a {
+  color: #b7c0cd;
+  text-decoration: none;
+}
+
+#secondary .menu-list .m-state__active-highlight-point::before {
+  left: -30px;
+}
+
+/* 统一设置menu-list背景图片 */
+#secondary .menu-list img {
+  float: left;
+
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  background-image: url(../images/sprite.png);
+  background-position: -50px -50px;
+}
+
+/* 设置menu菜单图标位置 */
+#secondary .menu-list li:nth-child(2) img {
+  background-position-x: -70px;
+}
+
+#secondary .menu-list li:nth-child(3) img {
+  background-position-x: -94px;
+}
+
+#secondary .menu-list li:nth-child(4) img {
+  background-position-x: -117px;
+}
+
+#secondary .menu-list li [class^='m-subscript'] {
+  margin-top: 6px;
+}
+
+
+/* 服务器剩余空间样式 */
+#server-capacity {
+  position: fixed;
+  bottom: 20px;
+
+  width: 190px;
+  height: 30px;
+
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 服务器剩余空间文本样式 */
+#server-capacity #server-capacity__description {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 10px;
+}
+
+/* 进度条底栏 */
+#server-capacity #progress-bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: rgba(71, 83, 100, .3);
+}
+
+/* 进度条填充部分 */
+#server-capacity #progress-fill {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+
+	background-image: linear-gradient(90deg, 
+		#7f5be6 1%, 
+    #9d8fe3 100%);
+}
