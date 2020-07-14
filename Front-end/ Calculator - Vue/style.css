@@ -1,0 +1,63 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}
+
+#app {
+	--button-width: 80px;
+	--button-height: 80px;
+
+	display: grid;
+	grid-template-areas:
+		"result result result result"
+		"ac plus-minus percent divide"
+		"number-7 number-8 number-9 multiply"
+		"number-4 number-5 number-6 subtract"
+		"number-1 number-2 number-3 add"
+		"number-0 number-0 dot equal";
+	grid-template-columns: repeat(4, var(--button-width));
+	grid-template-rows: repeat(6, var(--button-height));
+	grid-gap: 1em;
+
+	width: 400px;
+	min-height: 600px;
+	padding: 15px;
+	border-radius: 10px;
+
+	background: #ffffff;
+	box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+#result {
+	padding-right: 20px;
+
+	font-size: 48px;
+	text-align: right;
+	word-break: break-word;
+	line-height: var(--button-height);
+}
+
+button {
+	border: 0px;
+	border-radius: calc(var(--button-height) / 2);
+
+	font: 24px Helvetica;
+
+	outline: none;
+	background: #ffffff;
+	box-shadow: 8px 8px 15px #d9d9d9, -8px -8px 15px #ffffff;
+
+	cursor: pointer;
+}
+
+button:active {
+	background: linear-gradient(145deg, #e6e6e6, #ffffff);
+	box-shadow: 8px 8px 15px #d9d9d9 inset, -8px -8px 15px #ffffff inset;
+}
