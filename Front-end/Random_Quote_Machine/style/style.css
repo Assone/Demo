@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: all 1s;
+}
+
+#quote-box {
+  width: 550px;
+  padding: 40px 50px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+#quote-box #content {
+  overflow: auto;
+  margin-bottom: 30px;
+  transition: all 1s;
+}
+#quote-box #content #text {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+#quote-box #content #text i {
+  margin-right: 0.4em;
+}
+#quote-box #content #author {
+  float: right;
+  font-style: normal;
+}
+#quote-box #controls {
+  --btn-height: 40px;
+  --btn-border_radius: 3px;
+  display: flex;
+}
+#quote-box #controls #share {
+  flex-grow: 1;
+}
+#quote-box #controls #share a {
+  display: inline-block;
+  width: var(--btn-height);
+  text-align: center;
+  line-height: var(--btn-height);
+}
+#quote-box #controls a,
+#quote-box #controls button {
+  height: var(--btn-height);
+  border-radius: var(--btn-border_radius);
+  color: #fff;
+  transition: all 1s;
+}
+#quote-box #controls button {
+  border: 0;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 10px;
+  color: #fff;
+}
+footer a {
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

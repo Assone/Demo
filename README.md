@@ -8,5 +8,8 @@
 
 ## 小玩意
 
-[计算机](./Front-end/Calculator-Vue)
+[计算器](./Front-end/Calculator-Vue)
+
 [实时Markdown预览](./Front-end/Markdown-Previewer)
+
+[随机引语生成器](./Front-end/Random_Quote_Machine)
