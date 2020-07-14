@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+ul {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0196e3;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #444;
+
+  background-color: #f2f2f2;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.gallery {
+  overflow: hidden;
+
+  width: 920px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-container {
+  display: flex;
+
+  transition: all 1s;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+
+  height: 45px;
+
+  background: url(./images/nav_background.png) repeat-x;
+}
+
+.gallery-controls li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  margin-right: 1px;
+
+  cursor: pointer;
+}
+
+.gallery-controls li:last-child {
+  margin-right: 0;
+}
+
+.gallery-controls li:hover,
+.gallery-controls li.active {
+  background: url(./images/nav_background__active.png);
+}
+
+footer {
+  text-align: center;
+}
+
+footer p:first-child {
+  font-size: 12px;
+}
+
+footer p:last-child {
+  font-size: 10px;
+}
