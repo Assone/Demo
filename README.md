@@ -19,3 +19,5 @@
 [随机引语生成器](./Front-end/Random_Quote_Machine)
 
 [类似苹果风格的轮播](./Front-end/Apple-like_Gallery_Slideshow)
+
+[简易画板](./Front-end/Drawing_board)

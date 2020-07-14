@@ -51,8 +51,8 @@ button {
   --controls_submit_background-color: #62D9F9;
   --controls_component_height: 30px;
 
-  --logo_check: url(../../images/icon-tick.svg);
-  --logo_delete: url(../../images/icon-delete.svg);
+  --logo_check: url(../images/icon-tick.svg);
+  --logo_delete: url(../images/icon-delete.svg);
 }
 
 #app {
