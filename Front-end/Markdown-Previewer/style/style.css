@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  height: 100%;
+}
+#app textarea {
+  min-width: 30%;
+  height: 100%;
+  padding: 2%;
+  resize: none;
+}
+#app #preview {
+  overflow: auto;
+  padding: 2%;
+}
+
+/*# sourceMappingURL=style.css.map */
