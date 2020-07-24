@@ -25,10 +25,16 @@ export default class View {
     this._reactiveTable = { ...reactiveHash } || {};
     this.getComponent();
     this.bindReactive();
+    this.bindEvent();
+    this.exec();
   }
+
+  exec() {}
 
   // 获取子组件
   getComponent() {}
+
+  bindEvent() {}
 
   // 绑定响应式
   bindReactive() {
