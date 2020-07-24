@@ -1,22 +1,42 @@
-@import "./info";
+@import "./reset.scss";
 @import "./component";
+@import "./notice.scss";
 
-html,body {
+html,
+body {
   height: 100vh;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  padding: 16px 15px 12px;
+  padding: vh(16px) vw(15px) vh(12px);
 
   background: url("../images/background.jpg") no-repeat;
   background-size: 100%;
 
   #container {
     display: grid;
-    grid-template-areas: 'info' 'staff' 'staff' '.' '.' 'seat' 'seat';
+    grid-template-areas: "info" "staff" "staff" "." "." "seat" "seat";
 
     height: 100%;
   }
+}
+
+.btn {
+  padding: vh(25px) vw(40px);
+  border: vw(4px) solid #9e7b00;
+  border-radius: vw(50px);
+
+  color: #9e7b00;
+  font-size: rem(26);
+  line-height: rem(26);
+
+  background: linear-gradient(
+    180deg,
+    #ffeaa9 0%,
+    #ffeaa9 50%,
+    #ffd95f 50%,
+    #ffd95f 100%
+  );
 }

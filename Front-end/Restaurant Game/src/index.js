@@ -1,7 +1,7 @@
-import './assets/style/reset.scss';
 import './assets/style/main.scss'
 
 import RestaurantModel from './model/Restaurant';
+import NoticeView from './view/Notice';
 import InfoView from './view/Info';
 
 let restaurant = new RestaurantModel({
@@ -20,5 +20,9 @@ infoComponent.init(restaurant, {
   cost: 'cost'
 });
 
+let notice = new NoticeView('#notice');
+notice.init(restaurant);
+
+window.notice = notice
 window.infoComponent = infoComponent
 window.restaurant = restaurant;
