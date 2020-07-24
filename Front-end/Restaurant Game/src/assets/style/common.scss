@@ -1,0 +1,8 @@
+$base_width: 640px;
+$base_height: 960px;
+@function vw($px) {
+  @return ($px / $base_width) * 100vw;
+}
+@function vh($px) {
+  @return ($px / $base_height) * 100vh;
+}

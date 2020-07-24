@@ -1,0 +1,75 @@
+$container_border-width: 10px;
+$container_border-radius: 40px;
+$container_border-color: #fff;
+$component_size: 128px;
+
+$staff_background-color: #ffd24d;
+$seat_background-color: #ffb55f;
+$cook_background__red: linear-gradient(
+  90deg,
+  #ff9121 0%,
+  #ff9121 50%,
+  #d96d00 50%,
+  #d96d00 100%
+);
+
+#restaurant-staff {
+  grid-area: staff;
+
+  padding: vh(25px) vw(30px);
+  border: $container_border-width solid $container_border-color;
+  border-radius: vw($container_border-radius);
+
+  background-color: $staff_background-color;
+
+  #restaurant-staff_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: vw(50px);
+
+    height: 100%;
+  }
+
+  .cook {
+    display: block;
+
+    width: vw($component_size);
+    height: vw($component_size);
+    border: ($container_border-width * 0.8) solid $container_border-color;
+    border-radius: vw($component_size / 2);
+
+    background: 0 / 100% no-repeat url("../images/cook.png"),
+      $cook_background__red;
+  }
+}
+
+#restaurant-seat {
+  grid-area: seat;
+
+  padding: vh(25px) vw(30px);
+  border: $container_border-width solid $container_border-color;
+  border-radius: vw($container_border-radius);
+
+  background-color: $seat_background-color;
+
+  #restaurant-seat_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: vw(10px);
+
+    height: 100%;
+
+    li {
+      width: vw(225px);
+
+      .seat {
+        display: block;
+
+        width: vw($component_size);
+        height: vw($component_size);
+        border: $container_border-width solid $container_border-color;
+        border-radius: vw($component_size / 2);
+      }
+    }
+  }
+}

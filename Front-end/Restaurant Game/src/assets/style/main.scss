@@ -1,0 +1,22 @@
+@import "./info";
+@import "./component";
+
+html,body {
+  height: 100vh;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  padding: 16px 15px 12px;
+
+  background: url("../images/background.jpg") no-repeat;
+  background-size: 100%;
+
+  #container {
+    display: grid;
+    grid-template-areas: 'info' 'staff' 'staff' '.' '.' 'seat' 'seat';
+
+    height: 100%;
+  }
+}
