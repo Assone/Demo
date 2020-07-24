@@ -32,7 +32,7 @@ export default class View {
 
   // 绑定响应式
   bindReactive() {
-    if (this._reactiveTable.valueOf() !== "{}") {
+    if (JSON.stringify(this._reactiveTable) !== "{}") {
       // 如果映射表不为空则进行绑定
       for (const key in this._component) {
         // 循环组件表
