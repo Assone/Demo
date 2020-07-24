@@ -1,23 +1,72 @@
+#restaurant-info {
+  $base-color: #8b6900;
+
+  $component_height: 70px;
+  $component_border-width: 10px;
+  $component_border-color: $base-color;
+  $component_background: linear-gradient(
+    180deg,
+    #ffe699 0%,
+    #ffe699 45%,
+    #ffd24d 45%,
+    #ffd24d 100%
+  );
+
+  grid-area: info;
+  display: flex;
+  justify-content: space-between;
+
+  height: vh($component_height);
+  // margin-bottom: vh(20px);
+
+  color: $base-color;
+
+  #restaurant-info_time,
+  #restaurant-info_cost {
+    display: flex;
+    align-items: center;
+
+    border: vw($component_border-width) solid $component_border-color;
+    border-radius: vh($component_height / 2);
+
+    background: $component_background;
+  }
+
+  #restaurant-info_time {
+    justify-content: center;
+
+    width: vw(210px);
+  }
+
+  #restaurant-info_cost {
+    justify-content: flex-end;
+
+    width: vw(310px);
+    padding-right: vw($component_border-width * 2);
+  }
+}
+
+
+
 $container_border-width: 10px;
 $container_border-radius: 40px;
 $container_border-color: #fff;
 $component_size: 128px;
 
-$staff_background-color: #ffd24d;
-$seat_background-color: #ffb55f;
-$cook_background__red: linear-gradient(
-  90deg,
-  #ff9121 0%,
-  #ff9121 50%,
-  #d96d00 50%,
-  #d96d00 100%
-);
-
 #restaurant-staff {
+  $staff_background-color: #ffd24d;
+  $cook_background__red: linear-gradient(
+    90deg,
+    #ff9121 0%,
+    #ff9121 50%,
+    #d96d00 50%,
+    #d96d00 100%
+  );
+
   grid-area: staff;
 
   padding: vh(25px) vw(30px);
-  border: $container_border-width solid $container_border-color;
+  border: vw($container_border-width) solid $container_border-color;
   border-radius: vw($container_border-radius);
 
   background-color: $staff_background-color;
@@ -35,7 +84,7 @@ $cook_background__red: linear-gradient(
 
     width: vw($component_size);
     height: vw($component_size);
-    border: ($container_border-width * 0.8) solid $container_border-color;
+    border: vw($container_border-width * 0.8) solid $container_border-color;
     border-radius: vw($component_size / 2);
 
     background: 0 / 100% no-repeat url("../images/cook.png"),
@@ -44,10 +93,12 @@ $cook_background__red: linear-gradient(
 }
 
 #restaurant-seat {
+  $seat_background-color: #ffb55f;
+
   grid-area: seat;
 
   padding: vh(25px) vw(30px);
-  border: $container_border-width solid $container_border-color;
+  border: vw($container_border-width) solid $container_border-color;
   border-radius: vw($container_border-radius);
 
   background-color: $seat_background-color;
@@ -67,7 +118,7 @@ $cook_background__red: linear-gradient(
 
         width: vw($component_size);
         height: vw($component_size);
-        border: $container_border-width solid $container_border-color;
+        border: vw($container_border-width) solid $container_border-color;
         border-radius: vw($component_size / 2);
       }
     }
