@@ -1,8 +1,14 @@
 $base_width: 640px;
 $base_height: 960px;
+$base_font-size: 16;
+
 @function vw($px) {
   @return ($px / $base_width) * 100vw;
 }
 @function vh($px) {
   @return ($px / $base_height) * 100vh;
+}
+
+@function rem($px) {
+  @return ($px / $base_font-size) + rem;
 }
