@@ -3,6 +3,12 @@ const DEFAULT_DATA = {
     week: 1,
     day: 1,
   },
+  config: {
+    cook: {
+      id: 0,
+      wage: 140,
+    },
+  },
   staff: [],
   cost: 200,
 };
