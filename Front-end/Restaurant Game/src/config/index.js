@@ -8,16 +8,16 @@ const DEFAULT_DATA = {
 };
 
 const CONFIG_INFO = {
-  el: "#restaurant-info",
+  el: '#restaurant-info',
   reactiveHash: {
-    week: "time.week",
-    day: "time.day",
-    cost: "cost",
+    week: 'time.week',
+    day: 'time.day',
+    cost: 'cost',
   },
 };
 
 const CONFIG_NOTICE = {
-  el: "#notice",
+  el: '#notice',
 };
 
 export { DEFAULT_DATA, CONFIG_INFO, CONFIG_NOTICE };

@@ -1,12 +1,12 @@
-import "./assets/style/main.scss";
+/* eslint-disable object-curly-spacing */
+import './assets/style/main.scss';
 
-import { DEFAULT_DATA } from "./config/index";
-import RestaurantModel from "./model/Restaurant";
-import AppController from "./controller/App";
+import { DEFAULT_DATA } from './config/index';
+import RestaurantModel from './model/Restaurant';
+import AppController from './controller/App';
 
-let restaurant = new RestaurantModel(DEFAULT_DATA);
-
-let app = new AppController(null, restaurant);
+const restaurant = new RestaurantModel(DEFAULT_DATA);
+const app = new AppController(null, restaurant);
 app.init();
 
 window.app = app;
