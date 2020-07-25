@@ -13,19 +13,63 @@ export default class RestaurantModel extends Model {
     super(data);
   }
 
-  /**
-   * 更新模型的方法
-   */
+  /** 模型上的一些方法 */
+  get methods() {
+    const _this = this;
+
+    return {
+      addCook() {
+        const id = _this.config.cook.id++;
+
+        _this.staff.push({
+          id,
+          workDays: 1,
+          wage: _this.config.cook.wage,
+        });
+      },
+      removeCook(cookId) {
+        const index = _this.staff.findIndex(({ id }) => id === cookId);
+        return _this.staff.splice(index, 1)[0];
+      },
+      addOneDay() {
+        _this.time.day++;
+      },
+      addOneWeek() {
+        _this.time.week++;
+        return this;
+      },
+      resetDay() {
+        _this.time.day = 1;
+        return this;
+      },
+      getDays() {
+        return _this.time.day;
+      },
+      increaseCost(value) {
+        _this.cost += value;
+      },
+      decreaseCost(value) {
+        _this.cost -= value;
+      },
+      sumWages() {
+        return _this.staff
+            .map(({ workDays, wage }) => Math.floor((workDays / 7) * wage))
+            .reduce((acc, cur) => acc + cur);
+      },
+    };
+  }
+
+  /** 新模型的方法 */
   get update() {
     const _this = this;
 
     return {
       // 更新日期
       date() {
-        _this.time.day++;
+        _this.methods.addOneDay();
 
         // 如果当前天数大于7则重新调整为1，周数加1
-        _this.time.day > 7 && ((_this.time.day = 1), _this.time.week++);
+        if (_this.methods.getDays() > 7) _this.methods.resetDay().addOneWeek();
       },
 
       /**
@@ -33,12 +77,18 @@ export default class RestaurantModel extends Model {
        * @param {number} value 对当前金额相加或相减的数字
        */
       cost(value) {
-        if (typeof value !== 'number') throw new Error('Value must a number');
+        if (arguments.length === 0) {
+          const cost = _this.methods.sumWages();
 
-        // 传入的如果是负数则取绝对值再相减，为正数则相加
-        String(value).indexOf('-') === -1
-          ? (_this.cost += value)
-          : (_this.cost -= Math.abs(value));
+          _this.methods.decreaseCost(cost);
+        } else {
+          if (typeof value !== 'number') throw new Error('Value must a number');
+
+          // 传入的如果是负数则取绝对值再相减，为正数则相加
+          String(value).indexOf('-') === -1
+            ? _this.methods.increaseCost(value)
+            : _this.methods.decreaseCost(Math.abs(value));
+        }
       },
     };
   }
