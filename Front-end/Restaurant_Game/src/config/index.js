@@ -13,17 +13,21 @@ const DEFAULT_DATA = {
   cost: 200,
 };
 
-const CONFIG_INFO = {
-  el: '#restaurant-info',
-  reactiveHash: {
-    week: 'time.week',
-    day: 'time.day',
-    cost: 'cost',
+const CONFIG_VIEW = {
+  info: {
+    el: '#restaurant-info',
+    reactiveHash: {
+      week: 'time.week',
+      day: 'time.day',
+      cost: 'cost',
+    },
+  },
+  staff: {
+    el: '#restaurant-staff',
+  },
+  notice: {
+    el: '#notice',
   },
 };
 
-const CONFIG_NOTICE = {
-  el: '#notice',
-};
-
-export { DEFAULT_DATA, CONFIG_INFO, CONFIG_NOTICE };
+export { DEFAULT_DATA, CONFIG_VIEW };
