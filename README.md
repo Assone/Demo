@@ -14,7 +14,7 @@
 
 [计算器](./Front-end/Calculator_Vue)
 
-[简单的日历组件](./Front-end/Component_Calendar)
+[简单的日期选择组件](./Front-end/Component_Calendar)
 
 [实时Markdown预览](./Front-end/Markdown_Previewer)
 
