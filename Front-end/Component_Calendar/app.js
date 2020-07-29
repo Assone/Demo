@@ -22,10 +22,10 @@ Vue.component('Calendar', {
     window.addEventListener('mousedown', evt => {
       const calendarView = document.querySelector('.calendar-view');
 
-      if (evt.target.tagName === 'I') {
-        this.showCalendarState = !this.showCalendarState;
-      } else if (calendarView && calendarView.contains(evt.target)) {
+      if (calendarView && calendarView.contains(evt.target)) {
         this.showCalendarState = true;
+      } else if (evt.target.tagName === 'I') {
+        this.showCalendarState = !this.showCalendarState;
       } else {
         this.showCalendarState = false;
       }
