@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Helvetica, sans-serif;
+}
+
+.calendar {
+  --component_width: 150px;
+  --component_height: 35px;
+  --component_border-radius: 5px;
+  --component_font-color: #000;
+  --icon_source_calendar: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg5NiAzNDVWMjMzYTggOCAwIDAgMC04LThINzM4djQ1YzAgMTcuNjczLTE0LjMyNyAzMi0zMiAzMi0xNy42NzMgMC0zMi0xNC4zMjctMzItMzJ2LTQ1SDM1MHY0NWMwIDE3LjY3My0xNC4zMjcgMzItMzIgMzItMTcuNjczIDAtMzItMTQuMzI3LTMyLTMydi00NUgxMzZhOCA4IDAgMCAwLTggOHYxMTJoNzY4em0wIDY0SDEyOHY0NzlhOCA4IDAgMCAwIDggOGg3NTJhOCA4IDAgMCAwIDgtOFY0MDl6TTczOCAxNjFoMTkwYzE3LjY3MyAwIDMyIDE0LjMyNyAzMiAzMnY3MzVjMCAxNy42NzMtMTQuMzI3IDMyLTMyIDMySDk2Yy0xNy42NzMgMC0zMi0xNC4zMjctMzItMzJWMTkzYzAtMTcuNjczIDE0LjMyNy0zMiAzMi0zMmgxOTBWOTZjMC0xNy42NzMgMTQuMzI3LTMyIDMyLTMyIDE3LjY3MyAwIDMyIDE0LjMyNyAzMiAzMnY2NWgzMjRWOTZjMC0xNy42NzMgMTQuMzI3LTMyIDMyLTMyIDE3LjY3MyAwIDMyIDE0LjMyNyAzMiAzMnY2NXpNMjg5IDQ3M2g1OGMxNy42NzMgMCAzMiAxNC4zMjcgMzIgMzIgMCAxNy42NzMtMTQuMzI3IDMyLTMyIDMyaC01OGMtMTcuNjczIDAtMzItMTQuMzI3LTMyLTMyIDAtMTcuNjczIDE0LjMyNy0zMiAzMi0zMnptMCAxMjhoNThjMTcuNjczIDAgMzIgMTQuMzI3IDMyIDMyIDAgMTcuNjczLTE0LjMyNyAzMi0zMiAzMmgtNThjLTE3LjY3MyAwLTMyLTE0LjMyNy0zMi0zMiAwLTE3LjY3MyAxNC4zMjctMzIgMzItMzJ6bTAgMTI4aDU4YzE3LjY3MyAwIDMyIDE0LjMyNyAzMiAzMiAwIDE3LjY3My0xNC4zMjcgMzItMzIgMzJoLTU4Yy0xNy42NzMgMC0zMi0xNC4zMjctMzItMzIgMC0xNy42NzMgMTQuMzI3LTMyIDMyLTMyem0xOTQtMjU2aDU4YzE3LjY3MyAwIDMyIDE0LjMyNyAzMiAzMiAwIDE3LjY3My0xNC4zMjcgMzItMzIgMzJoLTU4Yy0xNy42NzMgMC0zMi0xNC4zMjctMzItMzIgMC0xNy42NzMgMTQuMzI3LTMyIDMyLTMyem0wIDEyOGg1OGMxNy42NzMgMCAzMiAxNC4zMjcgMzIgMzIgMCAxNy42NzMtMTQuMzI3IDMyLTMyIDMyaC01OGMtMTcuNjczIDAtMzItMTQuMzI3LTMyLTMyIDAtMTcuNjczIDE0LjMyNy0zMiAzMi0zMnptMCAxMjhoNThjMTcuNjczIDAgMzIgMTQuMzI3IDMyIDMyIDAgMTcuNjczLTE0LjMyNyAzMi0zMiAzMmgtNThjLTE3LjY3MyAwLTMyLTE0LjMyNy0zMi0zMiAwLTE3LjY3MyAxNC4zMjctMzIgMzItMzJ6bTE5NC0yNTZoNThjMTcuNjczIDAgMzIgMTQuMzI3IDMyIDMyIDAgMTcuNjczLTE0LjMyNyAzMi0zMiAzMmgtNThjLTE3LjY3MyAwLTMyLTE0LjMyNy0zMi0zMiAwLTE3LjY3MyAxNC4zMjctMzIgMzItMzJ6bTAgMTI4aDU4YzE3LjY3MyAwIDMyIDE0LjMyNyAzMiAzMiAwIDE3LjY3My0xNC4zMjcgMzItMzIgMzJoLTU4Yy0xNy42NzMgMC0zMi0xNC4zMjctMzItMzIgMC0xNy42NzMgMTQuMzI3LTMyIDMyLTMyem0wIDEyOGg1OGMxNy42NzMgMCAzMiAxNC4zMjcgMzIgMzIgMCAxNy42NzMtMTQuMzI3IDMyLTMyIDMyaC01OGMtMTcuNjczIDAtMzItMTQuMzI3LTMyLTMyIDAtMTcuNjczIDE0LjMyNy0zMiAzMi0zMnoiLz48L3N2Zz4=');
+  --icon_source_arrows: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUyNS4zNCAxODYuMTcybDI3Ni40NSAyNzYuNDVjMTIuNDk2IDEyLjQ5NyAzMi43NTcgMTIuNDk3IDQ1LjI1NCAwczEyLjQ5Ny0zMi43NTggMC00NS4yNTVMNTE2LjAzIDg2LjM1M2MtMTIuNDk3LTEyLjQ5Ny0zMi43NTgtMTIuNDk3LTQ1LjI1NSAwTDEyOC45NzkgNDI1LjQ5N2MtMTIuNDk3IDEyLjQ5Ny0xMi40OTcgMzIuNzU4IDAgNDUuMjU1czMyLjc1OCAxMi40OTcgNDUuMjU1IDBMNDYxLjM0IDE4Ni4yOThsLjAzMiA3MzkuNDI4YzAgMTcuNjc0IDE0LjMyNyAzMiAzMiAzMiAxNy42NzMgMCAzMi0xNC4zMjcgMzItMzJsLS4wMzItNzM5LjU1M3oiLz48L3N2Zz4=');
+  --icon_size: 25px;
+  --component-detail_hover: rgb(180, 180, 180);
+  --component-detail_weekday_bg: rgb(219, 217, 217);
+
+  position: relative;
+  display: inline-block;
+
+  width: var(--component_width);
+  height: var(--component_height);
+  /* border: 1px solid; */
+  border-radius: var(--component_border-radius);
+
+  color: var(--component_font-color);
+  line-height: var(--component_height);
+
+  background: #ededed;
+  box-shadow:  20px 20px 60px #c9c9c9, 
+               -20px -20px 60px #ffffff;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 calc(var(--component_width) * 0.05);
+}
+
+.calendar-container .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.calendar-container span {
+  cursor: default;
+}
+
+.calendar-container span:focus {
+  background-color: rgba(0, 136, 255, 0.25);
+  outline: none;
+}
+
+.calendar-view {
+  position: absolute;
+  top: 120%;
+  left: 0;
+
+  width: 150%;
+  padding: 10%;
+  border-radius: var(--component_border-radius);
+
+
+  background: #ededed;
+  box-shadow:  20px 20px 60px #c9c9c9, 
+               -20px -20px 60px #ffffff;
+}
+
+.calendar-view table {
+  width: 100%;
+  line-height: 1.5rem;
+}
+
+.calendar-view th {
+  cursor: default;
+}
+
+.calendar-view td {
+  border-radius: 5px;
+
+  text-align: center;
+}
+
+.calendar-view td:first-child:not(:empty),
+.calendar-view td:last-child:not(:empty) {
+  background-color: var(--component-detail_weekday_bg);
+}
+
+.calendar-view td:hover:not(:empty) {
+  background-color: var(--component-detail_hover) !important;
+
+  cursor: pointer;
+}
+
+.calendar-time {
+  cursor: default;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 5%;
+}
+
+.icon {
+  display: inline-block;
+
+  width: var(--icon_size);
+  height: var(--icon_size);
+
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: 0;
+  mask-size: 100%;
+  mask-position: 0;
+  
+  background-color: var(--component_font-color);
+  cursor: pointer;
+}
+
+.icon-calendar {
+  -webkit-mask-image: var(--icon_source_calendar);
+  mask-image: var(--icon_source_calendar);
+}
+
+.icon-arrows {
+  border-radius: 2px;
+
+  -webkit-mask-image: var(--icon_source_arrows);
+  mask-image: var(--icon_source_arrows);
+}
+
+.icon-arrows:hover {
+  background-color: var(--component-detail_hover);
+}
+
+.icon-arrows.next {
+  transform: rotate(180deg);
+}
