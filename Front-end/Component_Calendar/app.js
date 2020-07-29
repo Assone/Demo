@@ -24,7 +24,9 @@ Vue.component('Calendar', {
 
       if (evt.target.tagName === 'I') {
         this.showCalendarState = !this.showCalendarState;
-      } else if (!calendarView || !calendarView.contains(evt.target)) {
+      } else if (calendarView && calendarView.contains(evt.target)) {
+        this.showCalendarState = true;
+      } else {
         this.showCalendarState = false;
       }
     });
