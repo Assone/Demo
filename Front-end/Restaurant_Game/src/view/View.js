@@ -56,9 +56,9 @@ export default class View {
         if (this._component.hasOwnProperty(key)) {
           // 开始绑定
           new Watcher(
-            this._model,
-            this._component[key],
-            this._reactiveTable[key],
+              this._model,
+              this._component[key],
+              this._reactiveTable[key],
           );
         }
       }
