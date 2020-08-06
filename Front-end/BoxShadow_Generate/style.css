@@ -1,0 +1,117 @@
+/* Reset Default Style */
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Layout Style */
+
+#app {
+  display: grid;
+  grid-template-areas:
+    'title'
+    'content';
+
+  width: 50vw;
+  height: 100vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  margin: auto;
+}
+
+#title {
+  grid-area: title;
+}
+
+#app-container {
+  display: flex;
+  justify-content: space-between;
+  grid-area: content;
+}
+
+#previewer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+  height: 20vh;
+}
+
+#previewer-container__code {
+  display: flex;
+  align-items: center;
+
+  width: 15vw;
+  height: 10vh;
+}
+
+#controls-container li {
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+}
+
+#controls-container li label {
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls-container li input[type='text'] {
+  max-width: 60px;
+}
+
+/* Text Layout Style */
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+#title {
+  text-align: center;
+}
+
+#previewer-container__code {
+  text-align: center;
+}
+
+#controls-container li input[type='text'] {
+  text-align: center;
+}
+
+/* Color Style */
+
+#previewer-container__code {
+  background-color: #fff;
+}
+
+/* Animation Style */
+
+@keyframes copy {
+  to {
+    background: #e8e8e8;
+    box-shadow: inset 19px 19px 38px #c5c5c5, inset -19px -19px 38px #ffffff;
+  }
+}
+
+#previewer-container__code.active {
+  animation: copy 0.5s;
+}
+
+/* Other Style */
+
+#previewer-container__code {
+  cursor: pointer;
+
+  border-radius: 0.5vw;
+}

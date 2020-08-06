@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box-Shadow Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="title">Box-Shadow Generator</h1>
+      <div id="app-container">
+        <div id="previewer-container">
+          <p id="previewer-container__code"></p>
+        </div>
+        <ul id="controls-container">
+          <li>
+            <label for="control_x-offset"
+              >X Offset<input
+                type="text"
+                name="control_x-offset"
+                id="control_x-offset"
+                class="component-value"
+            /></label>
+            <input
+              type="range"
+              name="control_x-offset"
+              class="component-range"
+            />
+          </li>
+          <li>
+            <label for="control_y-offset"
+              >Y Offset<input
+                type="text"
+                name="control_y-offset"
+                id="control_y-offset"
+                class="component-value"
+            /></label>
+            <input
+              type="range"
+              name="control_y-offset"
+              class="component-range"
+            />
+          </li>
+          <li>
+            <label for="control_blur-radius"
+              >Blur Radius<input
+                type="text"
+                name="control_blur-radius"
+                id="control_blur-radius"
+                class="component-value"
+            /></label>
+            <input
+              type="range"
+              name="control_blur-radius"
+              class="component-range"
+            />
+          </li>
+          <li>
+            <label for="control_spread-radius"
+              >Spread Radius<input
+                type="text"
+                name="control_spread-radius"
+                id="control_spread-radius"
+                class="component-value"
+            /></label>
+            <input
+              type="range"
+              name="control_spread-radius"
+              class="component-range"
+            />
+          </li>
+          <li>
+            <label for="control_color-select"
+              >Color <input type="color" name="control_color-select" /><input
+                type="text"
+                name="control_color-select"
+                id="control_color-select"
+            /></label>
+          </li>
+          <input type="hidden" name="control_code" />
+        </ul>
+      </div>
+    </div>
+
+    <script src="Model.js"></script>
+    <script src="View.js"></script>
+    <script src="Controller.js"></script>
+    <script>
+      const app = new Controller(View, Model);
+      app.init();
+    </script>
+  </body>
+</html>
