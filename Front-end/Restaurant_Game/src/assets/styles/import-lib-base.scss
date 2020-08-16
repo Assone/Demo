@@ -30,14 +30,14 @@ $bg-color__linear: (
   7: (hsl(map-get($map-hue, 7), 100%, 50%), hsl(map-get($map-hue, 7), 100%, 35%)),
 );
 
-// $component: (
-//   size: vw(128),
-//   border-width: vw(8),
-//   border-radius: vw(30),
-//   info-border: vw(2),
-//   bg-button: #cc9979,
-//   bg-timeout: #535362,
-// );
+$component: (
+  size: vw(128),
+  border-width: vw(8),
+  border-radius: vw(30),
+  info-border: vw(2),
+  bg-button: #cc9979,
+  bg-timeout: #535362,
+);
 
 $container-bg: (
   staff: #ffd24d,

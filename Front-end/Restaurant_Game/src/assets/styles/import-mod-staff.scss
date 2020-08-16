@@ -1,19 +1,44 @@
 #container__staff {
   display: grid;
+  row-gap: vh(45);
   grid-template-columns: repeat(3, map-get($component, size));
   grid-template-rows: repeat(2, map-get($component, size));
-  row-gap: vh(45);
   justify-content: space-between;
 
   padding: vh(20) vw(40);
   border: map-get($map: $default, $key: border-width) solid
     map-get($map: $default, $key: border-color);
   border-radius: map-get($map: $component, $key: border-radius);
-
   background-color: map-get($map: $container-bg, $key: staff);
+
+  color: map-get($default, text-color_inverse);
 
   li {
     position: relative;
+
+    .m-slots {
+      .i-icon_cross {
+        position: absolute;
+        z-index: 1;
+
+        display: none;
+        
+        &.delete,
+        &.add {
+          display: block;
+        }
+
+        &.delete {
+          right: 0;
+          transform: rotate(45deg);
+        }
+
+        &.add {
+          top: 50%;
+          left: calc(50% - #{vw(40) / 2});
+        }
+      }
+    }
 
     .m-info {
       position: absolute;

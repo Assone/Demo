@@ -23,6 +23,7 @@ $base-height: 960;
 
   $length: length($keys);
   $list: map-get($map: $list, $key: nth($keys, 1));
+
   @if $length > 1 {
     @for $i from 2 through $length {
       @if $list == null {
@@ -30,8 +31,11 @@ $base-height: 960;
       }
       $list: map-get($map: $list, $key: nth($keys, $i));
     }
+
     @return $list;
-  } @else {
+  }
+
+  @else {
     @return $list;
   }
 }
