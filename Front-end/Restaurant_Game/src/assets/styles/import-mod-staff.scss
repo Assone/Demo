@@ -1,0 +1,29 @@
+#container__staff {
+  display: grid;
+  grid-template-columns: repeat(3, map-get($component, size));
+  grid-template-rows: repeat(2, map-get($component, size));
+  row-gap: vh(45);
+  justify-content: space-between;
+
+  padding: vh(20) vw(40);
+  border: map-get($map: $default, $key: border-width) solid
+    map-get($map: $default, $key: border-color);
+  border-radius: map-get($map: $component, $key: border-radius);
+
+  background-color: map-get($map: $container-bg, $key: staff);
+
+  li {
+    position: relative;
+
+    .m-info {
+      position: absolute;
+      bottom: 7.5%;
+      left: -14%;
+    }
+
+    .m-content {
+      position: absolute;
+      top: 80%;
+    }
+  }
+}

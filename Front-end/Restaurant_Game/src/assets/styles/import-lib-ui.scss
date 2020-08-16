@@ -1,0 +1,17 @@
+#app {
+  height: 94vh;
+
+  background: map-get($map: $container-bg, $key: app);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.icon-avatar {
+  width: 100%;
+}
+
+.icon-serve {
+  max-width: vw(80);
+  max-height: vh(80);
+}

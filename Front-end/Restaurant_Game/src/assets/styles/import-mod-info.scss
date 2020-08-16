@@ -1,0 +1,31 @@
+@import './import-lib-base.scss';
+
+#container__info {
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: vh(70);
+    border: map-get($map: $default, $key: border-width) solid red;
+    border-radius: vh(70);
+
+    background: map-get($map: $container-bg, $key: info);
+  }
+
+  &__time {
+    width: vw(210);
+  }
+
+  &__cost {
+    justify-content: flex-end;
+
+    width: vw(310);
+    padding: {
+      right: vw(30);
+    }
+  }
+}
