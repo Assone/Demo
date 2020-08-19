@@ -1,11 +1,10 @@
-$base-width: 640;
-$base-height: 960;
-
 @function vw($px) {
+  $base-width: 640;
   @return ($px / $base-width)  * 100vw;
 }
 
 @function vh($px) {
+  $base-height: 960;
   @return ($px / $base-height) * 100vh;
 }
 
@@ -13,7 +12,7 @@ $base-height: 960;
   $colorA: nth($list: $HSLArr, $n: 1);
   $colorB: nth($list: $HSLArr, $n: 2);
 
-  @return linear(180deg, $colorA 50%, $colorB 50%);
+  @return linear-gradient(90deg, $colorA 50%, $colorB 50%);
 }
 
 @function get($list, $keys...) {
@@ -38,4 +37,13 @@ $base-height: 960;
   @else {
     @return $list;
   }
+}
+
+@mixin fullWidthAndHeight {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin defaultConfig($value) {
+  $default: map-merge($default, $value) !global;
 }
