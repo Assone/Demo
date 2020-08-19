@@ -1,0 +1,232 @@
+@import './import-lib-base';
+
+$component: (
+  hue: (
+    1: hue(#aaa),
+    2: hue(#ff2626),
+    3: hue(#ff9122),
+    4: hue(#ac91ff),
+    5: hue(#661a00),
+    6: hue(#80ff00),
+    waiting: hue(#2693ff),
+    info: hue(#ffe699),
+  ),
+  size: vw(128),
+);
+
+@include defaultConfig($component);
+
+$background: (
+  kitchenette: #ffd24d,
+  dining-area: #ffa64d,
+  seat: (
+    default: #ddd,
+    dining-area:
+      getLinear(
+        (
+          hsl(get($default, hue, 1), 0%, 67%),
+          hsl(get($default, hue, 1), 0%, 87%)
+        )
+      ),
+    waiting:
+      getLinear(
+        (
+          hsl(get($default, hue, waiting), 100%, 57%),
+          hsl(get($default, hue, waiting), 100%, 43%)
+        )
+      ),
+  ),
+  notice: (
+    warn: #ffb399,
+    finish: #d9e67d,
+  ),
+  message: (
+    timeout: #535362,
+  ),
+  info:
+    linear-gradient(
+      to bottom,
+      hsl(get($default, hue, info), 100%, 80%) 46%,
+      hsl(get($default, hue, info), 100%, 65%) 54%
+    ),
+  linear: (
+    1: (
+      hsl(get($default, hue, 1), 0%, 67%),
+      hsl(get($default, hue, 1), 0%, 87%),
+    ),
+    2: (
+      hsl(get($default, hue, 2), 100%, 57%),
+      hsl(get($default, hue, 2), 100%, 35%),
+    ),
+    3: (
+      hsl(get($default, hue, 3), 100%, 57%),
+      hsl(get($default, hue, 3), 100%, 43%),
+    ),
+    4: (
+      hsl(get($default, hue, 4), 100%, 78%),
+      hsl(get($default, hue, 4), 100%, 65%),
+    ),
+    5: (
+      hsl(get($default, hue, 5), 100%, 20%),
+      hsl(get($default, hue, 5), 100%, 13%),
+    ),
+    6: (
+      hsl(get($default, hue, 6), 100%, 50%),
+      hsl(get($default, hue, 6), 100%, 35%),
+    ),
+  ),
+);
+
+@each $index, $arr in get($background, linear) {
+  .bg-seat--#{$index} {
+    background-image: getLinear($arr);
+  }
+}
+
+.m {
+  &-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: vh(70);
+    border: get($default, border-width) solid get($default, text-color);
+    border-radius: vh(70);
+
+    color: get($default, text-color);
+
+    background: get($background, info);
+  }
+
+  &-container {
+    display: grid;
+    grid-template: var(--container-template);
+    gap: var(--container-gap);
+
+    padding: vh(20) vw(40);
+    border: get($default, border-width) solid get($default, border-color);
+    border-radius: vw(30);
+
+    background: var(--container-background);
+  }
+
+  &-seat {
+    position: relative;
+
+    width: get($default, size);
+    height: get($default, size);
+
+    &__container {
+      @include fullWidthAndHeight;
+
+      border: vw(8) solid get($default, border-color);
+      border-radius: 50%;
+
+      background: var(--seat-background, #{get($background, seat, default)});
+
+      &.waiting {
+        background-image: get($background, seat, waiting);
+      }
+    }
+
+    &__status {
+      @include fullWidthAndHeight;
+
+      position: absolute;
+      top: 0;
+    }
+
+    &__message {
+      width: 100%;
+      border: vw(4) solid get($default, border-color);
+      border-radius: vw(2);
+
+      color: get($default, text-color--inverse);
+      text-align: center;
+
+      &.timeout {
+        text-decoration-line: line-through;
+
+        background: get($background, message, timeout);
+      }
+    }
+  }
+}
+
+.i {
+  $avatar: (
+    cook: url('../images/cook.png'),
+    customer-1: url('../images/customer-1.png'),
+    customer-2: url('../images/customer-2.png'),
+    customer-3: url('../images/customer-3.png'),
+    customer-4: url('../images/customer-4.png'),
+    customer-5: url('../images/customer-5.png'),
+    customer-6: url('../images/customer-6.png'),
+    customer-7: url('../images/customer-7.png'),
+  );
+
+  @each $name, $src in $avatar {
+    &-avatar__#{$name} {
+      background-image: $src;
+    }
+  }
+
+  $icon: (
+    heart: url('../images/icon_heart.png'),
+    coin: url('../images/icon_coin.png'),
+    serve: url('../images/icon_serve.png'),
+  );
+
+  @each $name, $src in $icon {
+    &-icon__#{$name} {
+      background-image: $src;
+    }
+  }
+
+  display: inline-block;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  &[class*='i-icon'] {
+    width: vw(60);
+    height: vh(60);
+  }
+
+  &-avatar__cook.empty {
+    filter: brightness(0) invert(1);
+  }
+
+  &-icon__cross {
+    position: absolute;
+    z-index: 1;
+    display: block;
+
+    width: vw(40) !important;
+    height: vw(40) !important;
+
+    &.delete {
+      transform: rotate(45deg);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+
+      width: 100%;
+      border: vw(4) solid #cc9979;
+    }
+
+    &::before {
+      position: absolute;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
