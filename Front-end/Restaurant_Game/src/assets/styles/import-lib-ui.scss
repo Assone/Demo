@@ -7,11 +7,12 @@
   background-size: cover;
 }
 
-.icon-avatar {
-  width: 100%;
-}
+#container {
+  &__kitchenette {
+    --container-background: #{get($background, kitchenette)};
+  }
 
-.icon-serve {
-  max-width: vw(80);
-  max-height: vh(80);
+  &__dining-area {
+    --container-background: #{get($background, dining-area)};
+  }
 }
