@@ -1,3 +1,102 @@
 #app {
   padding: vw(16);
+
+  &__container {
+    display: grid;
+
+    height: 100%;
+  }
+}
+
+#container {
+  &__info {
+    display: flex;
+    justify-content: space-between;
+
+    &__time {
+      width: vw(210);
+    }
+
+    &__cost {
+      justify-content: flex-end;
+
+      width: vw(310);
+      padding: {
+        right: vw(30);
+      }
+    }
+  }
+
+  &__kitchenette {
+    --container-template: repeat(2, 1fr) / repeat(3, 1fr);
+    --container-gap: #{vh(30) vw(70)};
+
+    justify-content: space-between;
+
+    .m-seat {
+      .i-icon__cross {
+        &.delete {
+          top: 5%;
+          right: 5%;
+        }
+
+        &.add {
+          top: 50%;
+          left: calc(50% - #{vw(40) / 2});
+        }
+      }
+
+      .i-icon__serve {
+        position: absolute;
+        bottom: 0;
+        left: -5%;
+      }
+
+      &__message {
+        position: absolute;
+        bottom: -14%;
+      }
+    }
+  }
+
+  &__dining-area {
+    --container-template: repeat(2, 1fr) / repeat(2, 1fr);
+    --container-gap: #{vh(16) vw(60)};
+    --seat-background: #{get($background, seat, dining-area)};
+
+    .m-seat {
+      [class*='i-icon'] {
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+      }
+
+      &__message {
+        margin-bottom: vh(2);
+
+        &::last-child {
+          margin-bottom: 0;
+        }
+
+        &-list {
+          position: absolute;
+          top: vh(5);
+          right: -75%;
+
+          width: vw(124);
+        }
+      }
+    }
+  }
+
+  &__waiting-area {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .m-seat {
+      & ~ * {
+        margin-right: vw(-35);
+      }
+    }
+  }
 }
