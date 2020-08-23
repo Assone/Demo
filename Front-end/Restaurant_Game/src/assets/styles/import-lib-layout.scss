@@ -1,10 +1,108 @@
 #app {
-  padding: vw(16);
+  $security-border: vw(16);
+
+  padding: $security-border;
 
   &__container {
     display: grid;
+    grid-template-rows: vh(70) auto vh(300) auto vh(300) auto;
+    grid-template-areas: 'info' '.' 'kitchenette' '.' 'dining-area' 'waiting-area';
 
     height: 100%;
+  }
+
+  &__notice {
+    --wrapper-height: #{vh(64)};
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: $security-border;
+
+    #popup {
+      padding: vh(20) vw(30);
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+          padding: 0 vw(45);
+        }
+      }
+
+      #welcome {
+        display: grid;
+
+        &__keyword {
+          display: flex;
+          justify-content: space-between;
+
+          margin: {
+            top: vh(18);
+            bottom: vh(28);
+          }
+        }
+      }
+
+      #menu {
+        width: 100%;
+
+        &__caption {
+          display: flex;
+          justify-content: space-between;
+
+          .m-seat {
+            flex-shrink: 0;
+
+            margin-top: calc(-#{get($component, size)} / 2 - #{vh(18)});
+          }
+        }
+
+        &__container {
+          border: vw(4) solid rgba(get($default, text-color), 0.8);
+          padding: vw(20) 0;
+          margin: {
+            top: vh(10);
+            bottom: vh(20);
+          }
+
+          .menu__container__item {
+            border: none;
+          }
+
+          .item__category__item {
+            display: flex;
+            justify-content: space-between;
+
+            label {
+              flex-grow: 1;
+            }
+
+            .separator {
+              margin-right: vw(15);
+            }
+
+            .price {
+              flex-basis: vw(50);
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      --wrapper-height: #{vh(108)};
+      --wrapper-border_radius: #{vw(28)};
+
+      padding: vw(70);
+    }
   }
 }
 
@@ -12,6 +110,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
+    grid-area: info;
 
     &__time {
       width: vw(210);
@@ -29,8 +128,9 @@
 
   &__kitchenette {
     --container-template: repeat(2, 1fr) / repeat(3, 1fr);
-    --container-gap: #{vh(30) vw(70)};
+    --container-gap: #{vh(30) vw(60)};
 
+    grid-area: kitchenette;
     justify-content: space-between;
 
     .m-seat {
@@ -48,13 +148,14 @@
 
       .i-icon__serve {
         position: absolute;
-        bottom: 0;
+        bottom: 3%;
         left: -5%;
       }
 
       &__message {
         position: absolute;
-        bottom: -14%;
+        // bottom: -14%;
+        bottom: -10%;
       }
     }
   }
@@ -62,12 +163,13 @@
   &__dining-area {
     --container-template: repeat(2, 1fr) / repeat(2, 1fr);
     --container-gap: #{vh(16) vw(60)};
-    --seat-background: #{get($background, seat, dining-area)};
+
+    grid-area: dining-area;
 
     .m-seat {
       [class*='i-icon'] {
         position: absolute;
-        bottom: 0;
+        bottom: -10%;
         left: -10%;
       }
 
@@ -90,12 +192,20 @@
   }
 
   &__waiting-area {
+    position: relative;
+    top: -30%;
     display: flex;
     flex-direction: row-reverse;
+    grid-area: waiting-area;
 
     .m-seat {
       & ~ * {
         margin-right: vw(-35);
+      }
+
+      &__message {
+        position: absolute;
+        bottom: -3%;
       }
     }
   }

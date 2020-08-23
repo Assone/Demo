@@ -8,27 +8,217 @@
   </head>
   <body>
     <div id="app">
-      <div id="container">
+      <div id="app__container">
         <div id="container__info">
-          <div id="container__info__time">
-            <span id="time__week">W1</span><span id="time__day">D1</span>
+          <div id="container__info__time" class="m-wrapper">
+            <span id="time__week">W1</span>
+            <span id="time__day">D1</span>
           </div>
-          <div id="container__info__cost">100</div>
+          <div id="container__info__cost" class="m-wrapper">100</div>
         </div>
-        <ul id="container__staff">
-          <li>
-            <div class="m-slots">
-              <i class="i i-avatar_cook"></i>
+        <ul id="container__kitchenette" class="m-container">
+          <li class="m-seat">
+            <div class="m-seat__container">
+              <i class="i i-avatar__cook"></i>
             </div>
-            <div class="m-info">
-              <i class="i i-icon_serve"></i>
+            <div class="m-seat__status">
+              <i class="i i-icon__serve"></i>
             </div>
-            <div class="m-content">UL炖LI</div>
+            <div class="m-seat__message">
+              <span>UL炖LI</span>
+            </div>
+          </li>
+          <li class="m-seat">
+            <div class="m-seat__container">
+              <i class="i i-avatar__cook"></i>
+            </div>
+            <div class="m-seat__status">
+              <i class="i i-icon__serve"></i>
+            </div>
+            <div class="m-seat__message">UL炖LI</div>
           </li>
         </ul>
-        <div id="container__seat"></div>
+        <ul id="container__dining-area" class="m-container">
+          <li class="m-seat">
+            <div class="m-seat__container">
+              <i class="i i-avatar__customer-1"></i>
+            </div>
+            <div class="m-seat__status">
+              <i class="i i-icon__coin"></i>
+            </div>
+            <div class="m-seat__message-list">
+              <div class="m-seat__message">UL炖LI</div>
+              <div class="m-seat__message timeout">UL炖LI</div>
+              <div class="m-seat__message">UL炖LI</div>
+            </div>
+          </li>
+          <li class="m-seat">
+            <div class="m-seat__container"></div>
+          </li>
+          <li class="m-seat">
+            <div class="m-seat__container"></div>
+          </li>
+          <li class="m-seat">
+            <div class="m-seat__container"></div>
+          </li>
+        </ul>
+        <ul id="container__waiting-area">
+          <li class="m-seat">
+            <div class="m-seat__container waiting">
+              <i class="i i-avatar__customer-3"></i>
+            </div>
+            <div class="m-seat__message">等位中</div>
+          </li>
+        </ul>
       </div>
-      <div id="notice"></div>
+      <!-- <div id="app__notice">
+        <div id="popup" class="m-container">
+          <div id="welcome">
+            <h1 id="welcome__title" class="title">WebMOOC餐厅开业啦！</h1>
+            <p id="welcome__description">
+              WebMOOC餐厅即将开业，请认真经营你的餐厅吧。经营餐厅需要做好下面几件事情!
+              加油!
+            </p>
+            <ul id="welcome__keyword">
+              <li>招聘厨师</li>
+              <li>迎接客人</li>
+              <li>烹饪美食</li>
+            </ul>
+            <button id="welcome__start" class="m-wrapper">开始经营吧</button>
+          </div>
+          <div id="menu">
+            <div id="menu__caption">
+              <div class="m-seat">
+                <div class="m-seat__container">
+                  <i class="i i-avatar__customer-1"></i>
+                </div>
+              </div>
+              <div id="menu__title">
+                QIAN正在点餐，已点<span id="amount">18</span>元的菜
+              </div>
+            </div>
+            <div id="menu__container">
+              <fieldset class="menu__container__item">
+                <legend class="item__category">凉菜（二选一，可不点）</legend>
+                <ul class="item__category__list">
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="code dishes" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="code dishes" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="menu__container__item">
+                <legend class="item__category">主菜（五选一，必点）</legend>
+                <ul class="item__category__list">
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="main course" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="main course" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="main course" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="main course" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="main course" /><span
+                        class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="menu__container__item">
+                <legend>饮品（二选一，可不点）</legend>
+                <ul class="item__category__list">
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="drink" /><span class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥6</div>
+                  </li>
+                  <li class="item__category__item">
+                    <label
+                      ><input type="radio" name="drink" /><span class="dash-name"
+                        >凉拌SAN</span
+                      ></label
+                    >
+                    <div class="separator">..............................</div>
+                    <div class="price">¥16</div>
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
+            <div id="menu__controls" class="controls">
+              <button class="m-wrapper" id="ready">点好了，快点上菜</button>
+              <button class="m-wrapper" id="leave">不吃了</button>
+            </div>
+          </div>
+          <div id="personnel-changes">
+            <h1>招聘新厨师</h1>
+            <p>招聘一名新厨师可以帮你更快的为顾客烹饪菜肴，增加餐厅收入。你最多可拥有六名厨师。但每个厨师每周需要你支付工资 ¥ 100。请问你确定要招聘一名新厨师吗？</p>
+            <div class="controls">
+              <button id="yes" class="m-wrapper">是的，确认招聘</button><button id="no" class="m-wrapper">先不了</button>
+            </div>
+          </div>
+        </div>
+        <div id="app__notice__content" class="m-wrapper warn">
+          QIAN完成用餐，收获$18
+        </div>
+      </div> -->
     </div>
   </body>
 </html>

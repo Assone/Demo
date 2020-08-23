@@ -1,6 +1,6 @@
 @function vw($px) {
   $base-width: 640;
-  @return ($px / $base-width)  * 100vw;
+  @return ($px / $base-width) * 100vw;
 }
 
 @function vh($px) {
@@ -9,8 +9,14 @@
 }
 
 @function getLinear($HSLArr) {
-  $colorA: nth($list: $HSLArr, $n: 1);
-  $colorB: nth($list: $HSLArr, $n: 2);
+  $colorA: nth(
+    $list: $HSLArr,
+    $n: 1,
+  );
+  $colorB: nth(
+    $list: $HSLArr,
+    $n: 2,
+  );
 
   @return linear-gradient(90deg, $colorA 50%, $colorB 50%);
 }
@@ -21,20 +27,24 @@
   }
 
   $length: length($keys);
-  $list: map-get($map: $list, $key: nth($keys, 1));
+  $list: map-get(
+    $map: $list,
+    $key: nth($keys, 1),
+  );
 
   @if $length > 1 {
     @for $i from 2 through $length {
       @if $list == null {
         @return null;
       }
-      $list: map-get($map: $list, $key: nth($keys, $i));
+      $list: map-get(
+        $map: $list,
+        $key: nth($keys, $i),
+      );
     }
 
     @return $list;
-  }
-
-  @else {
+  } @else {
     @return $list;
   }
 }

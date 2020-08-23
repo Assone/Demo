@@ -13,7 +13,7 @@ module.exports = {
     host: '0.0.0.0',
   },
   entry: {
-    app: './src/app.ts',
+    app: './src/app.js',
   },
   output: {
     filename: '[name].bundle.js',

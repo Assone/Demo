@@ -1,5 +1,6 @@
 module.exports = {
-  extends: ['stylelint-config-sass-guidelines', 'stylelint-config-standard'],
+  extends: ['stylelint-config-standard', 'stylelint-config-sass-guidelines'],
+  plugins: ['stylelint-scss'],
   rules: {
     'order/properties-order': [
       'width',

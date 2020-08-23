@@ -7,6 +7,7 @@ $default: (
   text-color: hsl($hue, $saturation, 27%),
   text-color_title: hsl($hue, $saturation, 15%),
   text-color--inverse: #fff,
+  font-size: 14px,
 );
 
 $component: (
@@ -15,5 +16,5 @@ $component: (
 );
 
 $container-bg: (
-  app:  url('/src/assets/images/background.jpeg'),
+  app: url('/src/assets/images/background.jpeg'),
 );

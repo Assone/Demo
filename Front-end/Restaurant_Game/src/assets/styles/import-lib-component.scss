@@ -24,8 +24,8 @@ $background: (
     dining-area:
       getLinear(
         (
-          hsl(get($default, hue, 1), 0%, 67%),
-          hsl(get($default, hue, 1), 0%, 87%)
+          hsl(get($default, hue, 1), 0%, 87%),
+          hsl(get($default, hue, 1), 0%, 67%)
         )
       ),
     waiting:
@@ -84,18 +84,19 @@ $background: (
 }
 
 .m {
-  &-info {
+  &-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: vh(70);
-    border: get($default, border-width) solid get($default, text-color);
-    border-radius: vh(70);
+    height: var(--wrapper-height, #{vh(70)});
+    border: var(--wrapper-border_width, #{get($default, border-width)}) solid
+      var(--wrapper-border_color, #{get($default, text-color)});
+    border-radius: var(--wrapper-border_radius, vh(70));
 
     color: get($default, text-color);
 
-    background: get($background, info);
+    background: var(--wrapper-background, #{get($background, info)});
   }
 
   &-container {
