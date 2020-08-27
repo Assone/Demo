@@ -1,0 +1,24 @@
+#app {
+  --color_decoration: #bdbdbd;
+  --color_active: #f6f6f6;
+
+  --app_width: 800px;
+  --app_height: 550px;
+  --app_border-radius: 5px;
+  --app_background-color: #3c3c4c;
+  --app_font-family: Helvetica, sans-serif;
+
+  --switch-view_color: var(--color_decoration);
+  --switch-view_color-active: var(--color_active);
+
+  --tasks-count_color: #54bfdc;
+
+  --controls_input_width: calc(var(--app_width) * 0.4);
+  --controls_submit_padding: 0 10px;
+  --controls_submit_color: #fff;
+  --controls_submit_background-color: #62d9f9;
+  --controls_component_height: 30px;
+
+  --logo_tick: url(../assets/icon-tick.svg);
+  --logo_delete: url(../assets/icon-delete.svg);
+}

@@ -1,0 +1,60 @@
+#app {
+  color: var(--color_decoration);
+  background-color: var(--app_background-color);
+  font-family: var(--app_font-family);
+}
+
+#controls-info time {
+  color: #fff;
+}
+
+#switch-view a {
+  color: var(--switch-view_color);
+
+  text-decoration-line: none;
+}
+
+#controls-tasks-count {
+  font-size: 12px;
+  color: var(--tasks-count_color);
+}
+
+#controls__input input::placeholder {
+  color: var(--color_decoration);
+}
+
+#controls__input button {
+  color: var(--controls_submit_color);
+  background-color: var(--controls_submit_background-color);
+}
+
+#app__content.active .icon-tick {
+  background-color: #00ff00;
+}
+
+.icon-tick,
+.icon-delete {
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--color_decoration);
+}
+
+.icon-tick {
+  margin-right: 20px;
+
+  -webkit-mask: var(--logo_tick) 0 / 100%;
+  mask: var(--logo_tick) 0 / 100%;
+}
+
+.icon-delete {
+  -webkit-mask: var(--logo_delete) 0 / 100%;
+  mask: var(--logo_delete);
+}
+
+#switch-view a.active,
+.content {
+  color: var(--color_active);
+}

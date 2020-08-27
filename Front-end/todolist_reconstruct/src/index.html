@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="app__controls">
+        <div id="controls__info">
+          <time datetime=""></time>
+          <div id="switch-view">
+            <a href="#incomplete" class="active">Incomplete Task</a>
+            <a href="#complete">Complete Task</a>
+          </div>
+        </div>
+        <div id="controls-tasks-count"></div>
+        <div id="controls__input">
+          <input type="text" placeholder="Enter a todo ..." />
+          <button>Add Task</button>
+        </div>
+      </div>
+      <ul id="app__content"></ul>
+    </div>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
