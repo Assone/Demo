@@ -12,13 +12,13 @@
         name="bombs"
         id="bombs"
         :max="bombsMax"
-        v-model="bomb"
+        v-model="bombs"
       />
     </div>
     <select name="emoji" id="menu__emoji">
       <option value="🐣 💣 🚧 ◻️">🐣 💣 🚧 ◻️</option>
     </select>
-    <button @click="startGame">start game</button>
+    <button @click="settingGame">start game</button>
   </div>
 </template>
 
@@ -33,49 +33,41 @@ export default class Menu extends Vue {
   @Config.State('row') staterow;
   @Config.State('col') statecol;
   @Config.State('bombs') stateBombs;
-  @Action('setSize') adjustSize;
+  @Action('settingGame') setting;
 
-  get row() {
-    return this.staterow;
-  }
-
-  set row(value) {
-    this.adjustSize({
-      type: 'row',
-      value,
-    });
-  }
-
-  get col() {
-    return this.statecol;
-  }
-
-  set col(value) {
-    this.adjustSize({
-      type: 'col',
-      value,
-    });
-  }
-
-  get bomb() {
-    return this.stateBombs;
-  }
-
-  set bomb(value) {
-    this.adjustSize({
-      type: 'bombs',
-      value,
-    });
-  }
+  row = null;
+  col = null;
+  bombs = null;
 
   get bombsMax() {
-    return this.staterow * this.statecol - 1;
+    return this.row * this.col - 1;
   }
 
-  startGame() {
+  settingGame() {
     if (this.stateBombs < this.bombsMax) {
-      console.log('start game');
+      this.setting({
+        col: {
+          type: 'col',
+          value: this.col,
+        },
+        row: {
+          type: 'row',
+          value: this.row,
+        },
+        bombs: {
+          type: 'bombs',
+          value: this.bombs,
+        },
+      });
+
+      this.$parent.resetGame();
     }
+  }
+
+  created() {
+    this.row = this.staterow;
+    this.col = this.statecol;
+    this.bombs = this.stateBombs;
   }
 }
 </script>
