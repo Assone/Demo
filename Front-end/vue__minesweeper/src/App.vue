@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button id="app__setting"></button>
+    <Menu />
+    <div id="app__container">
+      <!-- <Result />
+      <Container />
+      <Info /> -->
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from 'vue-property-decorator';
+// import Result from '@/components/Result.vue';
+// import Container from '@/components/Container.vue';
+// import Info from '@/components/Info/index.vue';
+import Menu from '@/components/Menu.vue';
 
-export default {
-  name: 'App',
+@Component({
   components: {
-    HelloWorld,
+    // Result,
+    // Container,
+    // Info,
+    Menu,
   },
-};
+})
+export default class App extends Vue {}
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style lang="scss"></style>
