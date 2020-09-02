@@ -11,17 +11,24 @@ export default new Vuex.Store({
     status: {
       isWin: false,
       gameOver: false,
+      startTimer: false,
     },
     count: {
-      flag: 0,
+      flag: 10,
       steps: 0,
-      time: 0,
     },
   },
   getters: {},
   mutations: {
-    setSize({ config }, { type, value }) {
+    setSize({ config, count }, { type, value }) {
       config[type] = Number(value);
+      type === 'bombs' && (count.flag = Number(value));
+    },
+    changeFlagCount({ count }, num) {
+      count.flag += num;
+    },
+    addSteps({ count }) {
+      count.steps++;
     },
     getGrid(state) {
       const { row, col, bombs } = state.config;
@@ -38,9 +45,12 @@ export default new Vuex.Store({
 
       state.grid = arr;
     },
-    changeFlagCount({ count }, num) {
-      console.log(count.flag, num, (count.flag += num));
-      count.flag += num;
+    resetGame({ status, count, config }) {
+      status.isWin = false;
+      status.gameOver = false;
+      status.startTimer = false;
+      count.flag = config.bombs;
+      count.steps = 0;
     },
   },
   actions: {
@@ -49,6 +59,14 @@ export default new Vuex.Store({
     },
     changeFlagCount({ commit }, num) {
       commit('changeFlagCount', num);
+    },
+    addSteps({ commit }) {
+      commit('addSteps');
+    },
+    settingGame({ dispatch }, options) {
+      dispatch('setSize', options.row);
+      dispatch('setSize', options.col);
+      dispatch('setSize', options.bombs);
     },
   },
   modules: {
