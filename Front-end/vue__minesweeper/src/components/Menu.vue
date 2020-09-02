@@ -18,19 +18,21 @@
     <select name="emoji" id="menu__emoji">
       <option value="🐣 💣 🚧 ◻️">🐣 💣 🚧 ◻️</option>
     </select>
-    <button>start game</button>
+    <button @click="startGame">start game</button>
   </div>
 </template>
 
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import { State, Action } from 'vuex-class';
+import { Action, namespace } from 'vuex-class';
+
+const Config = namespace('config');
 
 @Component
 export default class Menu extends Vue {
-  @State('row') staterow;
-  @State('col') statecol;
-  @State('bombs') stateBombs;
+  @Config.State('row') staterow;
+  @Config.State('col') statecol;
+  @Config.State('bombs') stateBombs;
   @Action('setSize') adjustSize;
 
   get row() {
@@ -55,10 +57,6 @@ export default class Menu extends Vue {
     });
   }
 
-  get bombsMax() {
-    return this.staterow * this.statecol - 1;
-  }
-
   get bomb() {
     return this.stateBombs;
   }
@@ -68,6 +66,16 @@ export default class Menu extends Vue {
       type: 'bombs',
       value,
     });
+  }
+
+  get bombsMax() {
+    return this.staterow * this.statecol - 1;
+  }
+
+  startGame() {
+    if (this.stateBombs < this.bombsMax) {
+      console.log('start game');
+    }
   }
 }
 </script>
