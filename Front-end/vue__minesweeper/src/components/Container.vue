@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import { namespace, State, Action, Mutation } from 'vuex-class';
+import { Component, Vue } from 'vue-property-decorator';
+import { namespace, State, Mutation, Action } from 'vuex-class';
 
 const Config = namespace('config');
 
@@ -40,22 +40,16 @@ const Config = namespace('config');
   },
 })
 export default class Container extends Vue {
-  @Config.State emoji;
   @State status;
-  @State grid;
+  @State('grid') list;
+  @Config.State emoji;
   @Mutation('getGrid') start;
   @Action changeFlagCount;
+  @Action addSteps;
   // @Prop() list;
 
-  list = [];
-
-  @Watch('grid')
-  test(value) {
-    this.list.splice(0, ...value);
-  }
-
   triggerFlag({ target }) {
-    if (!this.status.isWin) {
+    if (target.tagName.toLowerCase() === 'button' && !this.status.isWin) {
       if (!target.isReveal || target.isFlag) {
         if (target.isFlag) {
           target.textContent = this.emoji.starter;
@@ -73,7 +67,7 @@ export default class Container extends Vue {
   }
 
   reveal({ target }) {
-    if (target.tagName.toLowerCase() === 'button') {
+    if (target.tagName.toLowerCase() === 'button' && !target.isFlag) {
       const { isBomb } = target;
 
       if (isBomb) {
@@ -81,6 +75,8 @@ export default class Container extends Vue {
       } else {
         this.flipGrid(target);
       }
+
+      this.addSteps();
     }
   }
 
