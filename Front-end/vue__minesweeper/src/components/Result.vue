@@ -1,10 +1,10 @@
 <template>
-  <p id="app__result">{{ result }}</p>
+  <p id="app__result" @click="resetGame">{{ result }}</p>
 </template>
 
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import { State, namespace } from 'vuex-class';
+import { State, Mutation, namespace } from 'vuex-class';
 
 const Config = namespace('config');
 
@@ -12,6 +12,7 @@ const Config = namespace('config');
 export default class Result extends Vue {
   @Config.State emoji;
   @State('status') status;
+  @Mutation('getGrid') start;
 
   get result() {
     if (this.status.gameOver) {
@@ -19,6 +20,10 @@ export default class Result extends Vue {
     }
 
     return this.emoji.nor;
+  }
+
+  resetGame() {
+    this.start();
   }
 }
 </script>

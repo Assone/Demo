@@ -12,6 +12,11 @@ export default new Vuex.Store({
       isWin: false,
       gameOver: false,
     },
+    count: {
+      flag: 0,
+      steps: 0,
+      time: 0,
+    },
   },
   getters: {},
   mutations: {
@@ -33,10 +38,17 @@ export default new Vuex.Store({
 
       state.grid = arr;
     },
+    changeFlagCount({ count }, num) {
+      console.log(count.flag, num, (count.flag += num));
+      count.flag += num;
+    },
   },
   actions: {
     setSize({ commit }, options) {
       commit('setSize', options);
+    },
+    changeFlagCount({ commit }, num) {
+      commit('changeFlagCount', num);
     },
   },
   modules: {

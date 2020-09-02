@@ -4,7 +4,7 @@
     <Menu />
     <div id="app__container">
       <Result />
-      <Container :list="list" />
+      <Container />
       <!-- <Info /> -->
     </div>
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import { State, Mutation } from 'vuex-class';
+// import { State, Mutation } from 'vuex-class';
 import Result from '@/components/Result.vue';
 import Container from '@/components/Container.vue';
 // import Info from '@/components/Info/index.vue';
@@ -27,12 +27,14 @@ import Menu from '@/components/Menu.vue';
   },
 })
 export default class App extends Vue {
-  @State('grid') list;
-  @Mutation('getGrid') start;
-
-  created() {
-    this.start();
-  }
+  // @State('grid') list;
+  // @Mutation('getGrid') start;
+  // get grid() {
+  //   return this.list;
+  // }
+  // created() {
+  //   this.start();
+  // }
 }
 </script>
 
