@@ -1,5 +1,5 @@
 <template>
-  <p id="app__result">{{ result }}</p>
+  <p id="container__result">{{ result }}</p>
 </template>
 
 <script>
@@ -23,4 +23,19 @@ export default class Result extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+#container__result {
+  border: var(--border);
+  border-radius: 2vw;
+  margin: 0;
+  margin-bottom: 1vw;
+
+  line-height: 3rem;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+</style>
