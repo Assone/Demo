@@ -79,15 +79,19 @@ export default class Menu extends Vue {
   };
   showMOD = false;
 
+  // 根据总格子数来获取炸弹的最大值
   get bombsMax() {
     return this.row * this.col - 1;
   }
 
+  // 当炸弹的数量大于最大值是显示错误
   get error() {
     return this.bombs > this.bombsMax;
   }
 
+  // 修改emoji选项
   modOption({ target: { value, selectedIndex } }) {
+    // 如果是自定义的话则显示修改的菜单，否则则把预设值填充到对应的变量
     if (value === 'Customize') {
       this.showMOD = true;
     } else {
@@ -101,10 +105,13 @@ export default class Menu extends Vue {
       this.showMOD = false;
     }
 
+    // 将当前选择的选项记住
     this.changeIndex(selectedIndex);
   }
 
+  // 设置游戏
   settingGame() {
+    // 当炸弹数不出错时
     if (this.bombs <= this.bombsMax) {
       this.setting({
         col: {
@@ -122,6 +129,7 @@ export default class Menu extends Vue {
         emoji: this.emoji,
       });
 
+      // 调用父组件的变量来关闭菜单并重置游戏
       this.$parent.showMenu = false;
       this.$parent.resetGame();
     }
@@ -134,10 +142,14 @@ export default class Menu extends Vue {
     this.emoji = { ...this.stateEmoji };
 
     this.$nextTick(() => {
+      // 获取与state的index相同的option元素
       const [options] = Array.from(this.$el.querySelectorAll('option')).filter(
         option => option.index === this.index
       );
+      // 如果有则将它默认选中
       options && (options.selected = true);
+      // 如果索引等于自定义时将菜单显示出来
+      this.index === 3 && (this.showMOD = true);
     });
   }
 }

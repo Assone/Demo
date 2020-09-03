@@ -23,18 +23,20 @@ const Config = namespace('config');
   },
 })
 export default class Info extends Vue {
-  @State status;
-  @State count;
-  @Config.State bombs;
+  @State status; // 游戏的状态
+  @State count; // 游戏的一些计数信息
+  @Config.State bombs; // 炸弹的数量
 
   time = 0;
   timeid = null;
 
+  // 获取当前旗子和炸弹的数量
   get flagAndBombs() {
     const { flag } = this.count;
     return `${flag}/${this.bombs}`;
   }
 
+  // 如果是计时的状态，则time变量也跟着变化在屏幕上显示。暂停时则清空计时器
   @Watch('status', { deep: true })
   startGame({ startTimer }) {
     if (startTimer) {
@@ -46,6 +48,7 @@ export default class Info extends Vue {
     }
   }
 
+  // count是个对象，所以要深度监听。当步数等于0且计时暂停时，重置时间
   @Watch('count', { deep: true })
   resetTimer({ steps }) {
     if (steps === 0 && !this.status.startTimer) {

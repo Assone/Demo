@@ -52,19 +52,22 @@ const Config = namespace('config');
 export default class App extends Vue {
   @State count;
   @State status;
-  @Config.Getter('notBombsGrid') notBombsGridCount;
-  @Mutation('getGrid') start;
-  @Mutation('resetGame') resetInfo;
-  @Mutation('triggerTimer') setTimer;
+  @Config.Getter('notBombsGrid') notBombsGridCount; // 获取非炸弹的格子数
+  @Mutation('getGrid') start; // 获取格子列表
+  @Mutation('resetGame') resetInfo; // 重置游戏
+  @Mutation('triggerTimer') setTimer; // 设置定时器
 
   id = 0;
   showMenu = false;
 
+  // 修改菜单的显示状态
   triggerMenu() {
     this.showMenu = !this.showMenu;
   }
 
+  // 重置游戏
   resetGame() {
+    this.resetInfo();
     this.start();
     this.id++;
   }
@@ -126,7 +129,7 @@ body {
 
     width: 2.5em;
     height: 2.5em;
-    border: 10px solid #fff;
+    border: 1vw solid #fff;
     border-radius: 100%;
     outline: none;
 

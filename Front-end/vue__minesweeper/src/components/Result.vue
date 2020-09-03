@@ -14,10 +14,12 @@ export default class Result extends Vue {
   @State('status') status;
 
   get result() {
+    // 如果游戏结束了判断是否获胜并返回对应的emoji
     if (this.status.gameOver) {
       return this.status.isWin ? this.emoji.win : this.emoji.loser;
     }
 
+    // 否则返回默认的
     return this.emoji.nor;
   }
 }
