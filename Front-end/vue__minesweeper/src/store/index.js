@@ -45,12 +45,18 @@ export default new Vuex.Store({
 
       state.grid = arr;
     },
+    triggerTimer({ status }, state) {
+      status.startTimer = state;
+    },
     resetGame({ status, count, config }) {
       status.isWin = false;
       status.gameOver = false;
       status.startTimer = false;
       count.flag = config.bombs;
       count.steps = 0;
+    },
+    endGame({ status }) {
+      status.gameOver = true;
     },
   },
   actions: {
@@ -67,6 +73,10 @@ export default new Vuex.Store({
       dispatch('setSize', options.row);
       dispatch('setSize', options.col);
       dispatch('setSize', options.bombs);
+    },
+    endGame({ commit }) {
+      commit('triggerTimer', false);
+      commit('endGame');
     },
   },
   modules: {
