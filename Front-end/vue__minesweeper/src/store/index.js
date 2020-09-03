@@ -49,7 +49,7 @@ export default new Vuex.Store({
       state.grid = arr;
     },
     triggerTimer({ status }, state) {
-      status.startTimer = state;
+      !status.gameOver && (status.startTimer = state);
     },
     resetGame({ status, count, config }) {
       status.isWin = false;

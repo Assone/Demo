@@ -77,7 +77,7 @@ export default class Container extends Vue {
         this.flipGrid(target);
       }
 
-      this.addSteps();
+      !this.status.gameOver && this.addSteps();
     }
   }
 
