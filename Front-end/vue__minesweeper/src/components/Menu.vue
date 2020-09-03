@@ -105,7 +105,7 @@ export default class Menu extends Vue {
   }
 
   settingGame() {
-    if (this.bombs < this.bombsMax) {
+    if (this.bombs <= this.bombsMax) {
       this.setting({
         col: {
           type: 'col',
