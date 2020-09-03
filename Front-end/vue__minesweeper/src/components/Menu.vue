@@ -229,6 +229,11 @@ export default class Menu extends Vue {
       width: 100%;
       text-align: end;
 
+      label {
+        display: flex;
+        justify-content: flex-end;
+      }
+
       input {
         height: 1.5rem;
         width: 80%;
