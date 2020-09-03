@@ -1,6 +1,6 @@
 <template>
   <table
-    id="app__container"
+    id="container__grid"
     ref="table"
     @click="reveal"
     @contextmenu.prevent="triggerFlag"
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { namespace, State, Mutation, Action } from 'vuex-class';
 
 const Config = namespace('config');
@@ -46,23 +46,23 @@ export default class Container extends Vue {
   @Mutation('getGrid') start;
   @Action changeFlagCount;
   @Action addSteps;
-  // @Prop() list;
+  @Action endGame;
+  @Prop(Number) count;
+
+  filpCount = 0;
+  bombList = [];
+
+  @Watch('filpCount')
+  isWin(filpCount) {
+    if (filpCount === this.count) {
+      this.endGame(true);
+      this.bombList.forEach(bomb => this.revealFlag(bomb, true));
+    }
+  }
 
   triggerFlag({ target }) {
     if (target.tagName.toLowerCase() === 'button' && !this.status.isWin) {
-      if (!target.isReveal || target.isFlag) {
-        if (target.isFlag) {
-          target.textContent = this.emoji.starter;
-          target.isFlag = false;
-          this.changeFlagCount(1);
-        } else {
-          target.textContent = this.emoji.flag;
-          target.isFlag = true;
-          this.changeFlagCount(-1);
-        }
-
-        target.isReveal = !target.isReveal;
-      }
+      this.revealFlag(target);
     }
   }
 
@@ -72,6 +72,7 @@ export default class Container extends Vue {
 
       if (isBomb) {
         this.flipGridAll();
+        this.endGame();
       } else {
         this.flipGrid(target);
       }
@@ -80,11 +81,29 @@ export default class Container extends Vue {
     }
   }
 
+  revealFlag(target, inspect) {
+    if (!target.isReveal || target.isFlag) {
+      if (target.isFlag && !inspect) {
+        target.textContent = this.emoji.starter;
+        target.isFlag = false;
+        !inspect && this.changeFlagCount(1);
+      } else {
+        target.textContent = this.emoji.flag;
+        target.isFlag = true;
+        !inspect && this.changeFlagCount(-1);
+      }
+
+      target.isReveal = !target.isReveal;
+    }
+  }
+
   flipGrid(target, inspect) {
     const { isBomb, bombsCount, isReveal, neighbours } = target;
 
     if (inspect || !isReveal) {
       target.isReveal = true;
+      this.filpCount++;
+
       if (isBomb) {
         target.textContent = this.emoji.bomb;
       } else if (bombsCount) {
@@ -136,9 +155,9 @@ export default class Container extends Vue {
   mounted() {
     this.$nextTick(() => {
       const table = this.$refs.table;
-      const itemList = Array.from(table.querySelectorAll('button')).filter(
-        item => !item.isBomb
-      );
+      const itemList = Array.from(
+        table.querySelectorAll('button')
+      ).filter(item => (!item.isBomb ? item : this.bombList.push(item)));
       itemList.forEach(item => {
         item.neighbours = item.neighbours.map(([y, x]) => {
           return table.children[y].children[x].firstElementChild;
@@ -149,4 +168,27 @@ export default class Container extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+#container__grid {
+  width: 100%;
+
+  td {
+    width: var(--lattice-size);
+    height: var(--lattice-size);
+    padding: 0;
+  }
+
+  button {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+
+    font-size: 1.3rem;
+    line-height: 1em;
+
+    background: transparent;
+    cursor: pointer;
+  }
+}
+</style>
