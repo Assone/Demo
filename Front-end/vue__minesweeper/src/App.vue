@@ -132,7 +132,7 @@ body {
 
     cursor: pointer;
 
-    background: #fff;
+    background: var(--color);
 
     &.active {
       border: 1vw solid #ffd000;
