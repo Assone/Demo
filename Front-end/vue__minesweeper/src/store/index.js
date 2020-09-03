@@ -17,12 +17,15 @@ export default new Vuex.Store({
       flag: 10,
       steps: 0,
     },
+    selectIndex: 0,
   },
-  getters: {},
   mutations: {
     setSize({ config, count }, { type, value }) {
       config[type] = Number(value);
       type === 'bombs' && (count.flag = Number(value));
+    },
+    changeSelectIndex(state, num) {
+      state.selectIndex = Number(num);
     },
     changeFlagCount({ count }, num) {
       count.flag += num;
@@ -55,13 +58,21 @@ export default new Vuex.Store({
       count.flag = config.bombs;
       count.steps = 0;
     },
-    endGame({ status }) {
+    endGame({ status }, isWin) {
+      status.isWin = isWin;
       status.gameOver = true;
+      status.startTimer = false;
+    },
+    settingEmoji({ config }, emoji) {
+      config.emoji = emoji;
     },
   },
   actions: {
     setSize({ commit }, options) {
       commit('setSize', options);
+    },
+    changeSelectIndex({ commit }, num) {
+      commit('changeSelectIndex', num);
     },
     changeFlagCount({ commit }, num) {
       commit('changeFlagCount', num);
@@ -69,14 +80,15 @@ export default new Vuex.Store({
     addSteps({ commit }) {
       commit('addSteps');
     },
-    settingGame({ dispatch }, options) {
+    settingGame({ dispatch, commit }, options) {
       dispatch('setSize', options.row);
       dispatch('setSize', options.col);
       dispatch('setSize', options.bombs);
+      commit('settingEmoji', options.emoji);
     },
-    endGame({ commit }) {
+    endGame({ commit }, isWin) {
       commit('triggerTimer', false);
-      commit('endGame');
+      commit('endGame', isWin);
     },
   },
   modules: {
