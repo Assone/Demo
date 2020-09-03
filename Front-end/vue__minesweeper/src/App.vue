@@ -23,7 +23,7 @@
         ref="container"
         :key="id"
         :count="notBombsGridCount"
-        @click.native.once="setTimer(true)"
+        @click.native="setTimer(true)"
       />
       <Info />
     </div>
