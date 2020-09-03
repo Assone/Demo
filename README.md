@@ -24,4 +24,4 @@
 
 [Box-Shadow 生成器](./Front-end/BoxShadow_Generate)
 
-[扫雷游戏](./Front-end/minesweeper)
+[扫雷游戏](https://jolly-aryabhata-d6f021.netlify.app/)

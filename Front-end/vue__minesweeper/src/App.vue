@@ -92,6 +92,7 @@ body {
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -109,6 +110,7 @@ body {
   padding: 10px;
   border: 10px solid var(--color);
   border-radius: 2vw;
+  margin-bottom: 10px;
 
   text-align: center;
   font-family: AppleColorEmoji, Arial, Helvetica, sans-serif;
