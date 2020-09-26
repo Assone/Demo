@@ -24,7 +24,7 @@ export default class Box extends Vue {
 <style lang="scss" scoped>
 .box {
   &__info {
-    margin-top: 60px;
+    padding-top: 60px;
     margin-bottom: 40px;
     text-align: center;
   }

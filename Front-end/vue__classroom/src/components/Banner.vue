@@ -39,10 +39,14 @@ export default class Banner extends Vue {
 }
 </script>
 
-<style lang="scss">
-.swiper-pagination-bullet-active {
+<style lang="scss" scoped>
+::v-deep .swiper-pagination {
+  bottom: 40px;
+}
+
+::v-deep .swiper-pagination-bullet-active {
   width: 28px;
   border-radius: 8px;
-  background-color: var(--active);
+  background-color: $color__active;
 }
 </style>

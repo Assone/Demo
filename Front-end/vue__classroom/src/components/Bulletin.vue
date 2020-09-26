@@ -38,10 +38,6 @@ export default class Bulletin extends Vue {
     padding-bottom: 30px;
     border-bottom: 1px solid #e3e5e9;
     margin-bottom: 30px;
-
-    &:last-child {
-      margin-bottom: 100px;
-    }
   }
 
   &__cover {

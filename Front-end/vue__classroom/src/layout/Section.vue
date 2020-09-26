@@ -1,5 +1,6 @@
 <template>
   <div class="section" :class="{ section__background: notWhite }">
+    <slot name="section"></slot>
     <div class="content">
       <slot></slot>
     </div>
@@ -16,7 +17,20 @@ export default class Section extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.section__background {
-  background-color: #fafafa;
+.section {
+  &__background {
+    background-color: #fafafa;
+  }
+
+  .content {
+    padding: {
+      bottom: 60px;
+    }
+  }
+}
+
+.section,
+.content {
+  position: relative;
 }
 </style>
