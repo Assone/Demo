@@ -54,7 +54,7 @@ footer {
     padding-top: 35px;
   }
 
-  #copyright * {
+  #side__copyright * {
     margin-right: 10px;
   }
 
