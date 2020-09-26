@@ -8,15 +8,15 @@ export const nav = [
     name: '鲲鹏教育中心',
   },
   {
-    path: '/home/course/cloudclassroom',
+    path: '/course/mooc',
     name: 'MOOC课程',
   },
   {
-    path: '/home/course/microauthentication',
+    path: '/course/tc',
     name: '培训认证',
   },
   {
-    path: '/home/course/cloudlab',
+    path: '/course/lab',
     name: '在线实验',
   },
   {
