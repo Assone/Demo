@@ -1,0 +1,31 @@
+/* 重置样式 */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  min-width: 1200px;
+  font: 14px 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color__active;
+}
+
+ul {
+  list-style: none;
+}
+
+.content {
+  width: 1200px;
+  margin: auto;
+}

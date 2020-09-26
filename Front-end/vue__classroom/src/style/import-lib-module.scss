@@ -1,0 +1,16 @@
+[class|='i'] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: $sprite;
+}
+
+.i {
+  &-author {
+    background-position: -508px -192px;
+  }
+
+  &-school {
+    background-position: -240px -468px;
+  }
+}
