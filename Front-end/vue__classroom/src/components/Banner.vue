@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import SwiperCore, { Pagination, Autoplay, Lazy } from 'swiper';
+import SwiperCore, { Pagination, Autoplay, Lazy, SwiperOptions } from 'swiper';
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 
 import 'swiper/swiper.scss';
@@ -28,9 +28,12 @@ SwiperCore.use([Pagination, Autoplay, Lazy]);
 export default class Banner extends Vue {
   @Prop({ type: Array }) list!: Array<object>;
 
-  options = {
+  options: SwiperOptions = {
     loop: true,
     lazy: true,
+    autoplay: {
+      delay: 3000,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

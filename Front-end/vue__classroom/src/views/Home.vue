@@ -21,7 +21,7 @@
           v-for="(item, index) in cloud.list"
           :key="item.href"
           v-bind="item"
-          :currentIndex="index"
+          :offsetYIndex="index"
         />
         <x-button type="more" slot="extra">
           <router-link :to="String(cloud.more)">查看更多 ></router-link>
@@ -38,7 +38,7 @@
           v-for="(item, index) in market.list"
           :key="item.href"
           v-bind="item"
-          :currentIndex="6 + index"
+          :offsetYIndex="6 + index"
         />
         <x-button type="more" slot="extra">
           <router-link :to="String(market.more)">查看更多 ></router-link>
@@ -98,7 +98,7 @@ export default class Home extends Vue {
 .box-market {
   ::v-deep .box__content {
     display: grid;
-    grid-template-columns: repeat(3, 380px);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
   }
 

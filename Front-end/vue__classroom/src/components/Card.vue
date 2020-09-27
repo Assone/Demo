@@ -3,7 +3,7 @@
     <a :href="href">
       <div
         class="card__cover"
-        :style="{ backgroundPositionY: `${-currentIndex * baseHeight}px` }"
+        :style="{ backgroundPositionY: `${-offsetYIndex * baseHeight}px` }"
       ></div>
     </a>
     <div class="card__container">
@@ -40,7 +40,7 @@ export default class Card extends Vue {
   @Prop({ type: Number }) time?: string;
   @Prop({ type: String }) description!: string;
   @Prop({ type: String }) star?: string;
-  @Prop({ type: Number, required: true }) currentIndex!: number;
+  @Prop({ type: Number }) offsetYIndex!: number;
 
   baseHeight = 200;
 }

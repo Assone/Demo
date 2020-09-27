@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <router-view></router-view>
+    <keep-alive :exclude="['Error', 'Course']">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

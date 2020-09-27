@@ -1,6 +1,8 @@
 export const mooc = {
   title: 'MOOC课程',
   description: '面向师生提供丰富的自学开放课程，轻松实现自我提升。',
+  offsetY: 1,
+  color: true,
   tabs: [
     [
       '热门课程',
@@ -1176,6 +1178,7 @@ export const trainingCertification = {
   title: '培训认证',
   description:
     '面对高校师生提供丰富的直播培训课程和线上微认证课程，课外学习和技能提升新利器。',
+  offsetY: 2,
   tabs: [
     ['热门内容', ['职业规划', '软件开发', '前沿智能', '计算机语言', '鲲鹏']],
     ['前沿培训', ['职业规划', '软件开发', '前沿智能', '计算机语言', '鲲鹏']],
@@ -1670,6 +1673,9 @@ export const trainingCertification = {
 export const lab = {
   title: '在线实验',
   description: '即开即用在线实验，随时随地动手实操，体验真实开发环境。',
+  offsetY: 3,
+  color: true,
+  notRepeat: true,
   tabs: [
     ['热门实验', ['云计算', '人工智能', '鲲鹏', '软件开发']],
     ['在线实验', ['云计算', '大数据', '鲲鹏']],

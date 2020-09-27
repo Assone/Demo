@@ -95,7 +95,7 @@ export const classCloud = {
         'https://classroom.devcloud.cn-north-4.huaweicloud.com/joinclass/708f42f2ecad403bac894e38d776830c/6',
     },
   ],
-  more: 'course/cloudclassroom',
+  more: 'course/mooc',
 };
 
 export const market = {
