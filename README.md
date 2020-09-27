@@ -4,8 +4,6 @@
 
 ## 布局
 
-[华为 ClassRoom](./Front-end/Huawei_Classroom)
-
 [IFE 第九天任务](./Front-end/IFE_No.9)
 
 [IFE 第十二天任务](./Front-end/IFE_No.12)
@@ -25,3 +23,5 @@
 [Box-Shadow 生成器](./Front-end/BoxShadow_Generate)
 
 [扫雷游戏](https://jolly-aryabhata-d6f021.netlify.app/)
+
+[华为 ClassRoom 课堂](https://assone-demo-classroom.netlify.app)

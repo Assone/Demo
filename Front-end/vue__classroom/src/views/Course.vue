@@ -78,8 +78,12 @@ export default class Course extends Vue {
           this.map = new Map(tabs);
           this.offsetY = -offsetY;
           this.isWhite = color;
+
           notRepeat ||
-            this.data.forEach((item, index) => (item.offsetYIndex = index));
+            this.data.forEach(
+              (item: Record<string, number>, index) =>
+                (item.offsetYIndex = index)
+            );
         }
       );
   }
@@ -101,7 +105,8 @@ export default class Course extends Vue {
   }
 
   get content() {
-    return this.data.filter(course =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return this.data.filter((course: Record<string, any>) =>
       course.tab.includes(this.tab) && this.tag === undefined
         ? course
         : course.tag.includes(this.tag) && course
